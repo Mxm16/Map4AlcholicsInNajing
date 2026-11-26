@@ -1,0 +1,1576 @@
+[
+  {
+    "name": "裕诚雪茄吧(水游城假日酒店店)",
+    "sourceOrder": 1,
+    "address": "旧王府与建康路交叉口西北160米",
+    "point": [
+      118.785775,
+      32.024175
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "裕诚雪茄吧(水游城假日酒店店)",
+    "matchedAddress": "旧王府与建康路交叉口西北160米",
+    "poiId": "B0MR7RXSMQ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间周一至周日18:30-2:0",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MR7RXSMQ",
+      "name": "裕诚雪茄吧(水游城假日酒店店)",
+      "address": "旧王府与建康路交叉口西北160米",
+      "location": "118.785775,32.024175"
+    }
+  },
+  {
+    "name": "情绪出口酒吧Ventb",
+    "sourceOrder": 2,
+    "address": "淳化街道兴宁路武夷绿洲商业广场二楼Vent情绪出口Bar",
+    "point": [
+      118.841864,
+      31.930466
+    ],
+    "matchLevel": "商业广场附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间周一至周日18:30-2:00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "按小程序武夷绿洲商业广场匹配，尚未核实二楼入口。",
+    "matchedName": "武夷绿洲商业广场",
+    "matchedAddress": "天元中路31号(竹山路地铁站2号口步行300米)",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LU7SYY6B",
+      "name": "武夷绿洲商业广场",
+      "address": "天元中路31号(竹山路地铁站2号口步行300米)",
+      "location": "118.841864,31.930466"
+    },
+    "poiId": "B0LU7SYY6B"
+  },
+  {
+    "name": "麋鹿Q&A Gin·Cocktail Bar",
+    "sourceOrder": 3,
+    "address": "太平南路102号NOWS新座二号1层A-09-01铺",
+    "point": [
+      118.793454,
+      32.038557
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "麋鹿Gin&CocktailBar",
+    "matchedAddress": "太平南路102号NOWS新座二号1层A-09-01铺",
+    "poiId": "B0JU9L9EFF",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-24:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0JU9L9EFF",
+      "name": "麋鹿Gin&CocktailBar",
+      "address": "太平南路102号NOWS新座二号1层A-09-01铺",
+      "location": "118.793454,32.038557"
+    }
+  },
+  {
+    "name": "德味酒馆",
+    "sourceOrder": 4,
+    "address": "双闸街道江东南路与龙王大街交汇处金地中心菁华",
+    "point": [
+      118.690814,
+      31.976417
+    ],
+    "matchLevel": "园区附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:00-02:00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "小程序未提供门牌铺位，使用金地中心菁华位置。",
+    "matchedName": "金地中心菁华",
+    "matchedAddress": "保东路与龙王大街交叉口东180米",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0FFIJDSVR",
+      "name": "金地中心菁华",
+      "address": "保东路与龙王大街交叉口东180米",
+      "location": "118.690814,31.976417"
+    },
+    "poiId": "B0FFIJDSVR"
+  },
+  {
+    "name": "桥下酒馆",
+    "sourceOrder": 5,
+    "address": "阳光路3号太阳宫广场内（北侧）",
+    "point": [
+      118.814168,
+      32.065378
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "桥下酒馆",
+    "matchedAddress": "岗子村地铁站3号口旁边阳光路3号A30-3商铺",
+    "poiId": "B0K0X1NGDV",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周四,周日 18:00-01:30 周五,周六 18:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0K0X1NGDV",
+      "name": "桥下酒馆",
+      "address": "岗子村地铁站3号口旁边阳光路3号A30-3商铺",
+      "location": "118.814168,32.065378"
+    }
+  },
+  {
+    "name": "SingleBaby•露营酒吧",
+    "sourceOrder": 6,
+    "address": "南京市中山南路398号南捕厅1号",
+    "point": [
+      118.782435,
+      32.026361
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "Singlebaby•露营酒吧",
+    "matchedAddress": "中山南路398号南捕厅1号",
+    "poiId": "B0J3UBTIWX",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:00-01:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0J3UBTIWX",
+      "name": "Singlebaby•露营酒吧",
+      "address": "中山南路398号南捕厅1号",
+      "location": "118.782435,32.026361"
+    }
+  },
+  {
+    "name": "福气增增·居酒屋",
+    "sourceOrder": 7,
+    "address": "南京市秦淮区仙鹤街149号 福·烧鸟酒场",
+    "point": [
+      118.776623,
+      32.025212
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "福气增增·飲食酒屋",
+    "matchedAddress": "仙鹤街149号",
+    "poiId": "B0JRRAQ3PH",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 17:30-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0JRRAQ3PH",
+      "name": "福气增增·飲食酒屋",
+      "address": "仙鹤街149号",
+      "location": "118.776623,32.025212"
+    }
+  },
+  {
+    "name": "酒趣 Wine pop葡萄酒吧",
+    "sourceOrder": 8,
+    "address": "江苏省南京市秦淮区五老村街道太平南路102号(大行宫地铁站出入口步行250米)",
+    "point": [
+      118.79326,
+      32.038587
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "酒趣Winepop葡萄酒吧",
+    "matchedAddress": "五老村街道太平南路102号1层A-11-02",
+    "poiId": "B0MR1REI19",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 17:30-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MR1REI19",
+      "name": "酒趣Winepop葡萄酒吧",
+      "address": "五老村街道太平南路102号1层A-11-02",
+      "location": "118.79326,32.038587"
+    }
+  },
+  {
+    "name": "龙王隐世料理·烧肉酒场(新街口龙王庙店)",
+    "sourceOrder": 9,
+    "address": "龙王庙前1号(常府街地铁站1号口步行460米)",
+    "point": [
+      118.788327,
+      32.031912
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "龙王隐世料理•烧肉酒场(龙王庙小区店)",
+    "matchedAddress": "龙王庙前1号(西方巷与交叉口)",
+    "poiId": "B0JUOC8ZMC",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 20:00-23:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0JUOC8ZMC",
+      "name": "龙王隐世料理•烧肉酒场(龙王庙小区店)",
+      "address": "龙王庙前1号(西方巷与交叉口)",
+      "location": "118.788327,32.031912"
+    }
+  },
+  {
+    "name": "裕诚&大顽茄雪茄威士忌俱乐部(象房村路店)",
+    "sourceOrder": 10,
+    "address": "象房村路与扇骨营北路交叉口东南80米",
+    "point": [
+      118.802437,
+      32.021824
+    ],
+    "matchLevel": "路口附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市秦淮区象房村路/扇骨营北路",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：19:30-24:00",
+    "coordinateNote": "小程序位置为路口东南80米，坐标暂取对应路口；接近后请按原始地址寻找。",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "道路交叉路口",
+      "address": "江苏省南京市秦淮区象房村路/扇骨营北路",
+      "location": "118.802437,32.021824"
+    }
+  },
+  {
+    "name": "2467Bar",
+    "sourceOrder": 11,
+    "address": "俞家巷10号104室",
+    "point": [
+      118.779944,
+      32.038251
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "2467Bar",
+    "matchedAddress": "俞家巷10号104室",
+    "poiId": "B0H6O7U8JW",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周日至周四18:00-24:00 周五、周六18:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0H6O7U8JW",
+      "name": "2467Bar",
+      "address": "俞家巷10号104室",
+      "location": "118.779944,32.038251"
+    }
+  },
+  {
+    "name": "LOST HORIZON BAR",
+    "sourceOrder": 12,
+    "address": "熙南里中山南路400号(三山街地铁站2出口)",
+    "point": [
+      118.78201,
+      32.025413
+    ],
+    "matchLevel": "楼栋附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市秦淮区熙南里中山南路400号",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-04:00",
+    "coordinateNote": "按小程序中山南路400号匹配；未沿用高德大板巷4-4号的不同门牌。",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "门址",
+      "address": "江苏省南京市秦淮区熙南里中山南路400号",
+      "location": "118.782010,32.025413"
+    }
+  },
+  {
+    "name": "ROOF BAR",
+    "sourceOrder": 13,
+    "address": "万科都会天地c1-105(108邻家超市旁边上2楼)",
+    "point": [
+      118.796681,
+      31.963325
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "ROOF BAR",
+    "matchedAddress": "万科都会天地c1-105(108邻家超市旁边上2楼)",
+    "poiId": "B0I07MLJ5I",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0I07MLJ5I",
+      "name": "ROOF BAR",
+      "address": "万科都会天地c1-105(108邻家超市旁边上2楼)",
+      "location": "118.796681,31.963325"
+    }
+  },
+  {
+    "name": "Red Room虹房酒吧(百家湖1912店)",
+    "sourceOrder": 14,
+    "address": "秣陵街道双龙大道1680号俱乐部休闲区30幢百家湖1912街区5号102铺位",
+    "point": [
+      118.818094,
+      31.931246
+    ],
+    "matchLevel": "街区附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市江宁区秣陵街道双龙大道1680号俱乐部幢百家湖1912街区5号",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 17:00-02:00",
+    "coordinateNote": "按小程序百家湖1912地址匹配；高德同名店标为10幢，与小程序5号102铺位不一致，暂取街区附近。",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "小巷",
+      "address": "江苏省南京市江宁区秣陵街道双龙大道1680号俱乐部幢百家湖1912街区5号",
+      "location": "118.818094,31.931246"
+    }
+  },
+  {
+    "name": "上岸酒馆",
+    "sourceOrder": 15,
+    "address": "升州路326号1层",
+    "point": [
+      118.775307,
+      32.026836
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "上岸酒馆",
+    "matchedAddress": "升州路326号1层",
+    "poiId": "B0KUNZMIYL",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：18:00–02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0KUNZMIYL",
+      "name": "上岸酒馆",
+      "address": "升州路326号1层",
+      "location": "118.775307,32.026836"
+    }
+  },
+  {
+    "name": "枪花小酒馆啤休酿造(莫愁路店)",
+    "sourceOrder": 16,
+    "address": "莫愁路357号",
+    "point": [
+      118.774575,
+      32.037265
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "枪花小酒馆啤休酿造",
+    "matchedAddress": "莫愁路357号(上海路地铁站6A口步行410米)",
+    "poiId": "B0I2MRGRVQ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 16:30-00:30",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0I2MRGRVQ",
+      "name": "枪花小酒馆啤休酿造",
+      "address": "莫愁路357号(上海路地铁站6A口步行410米)",
+      "location": "118.774575,32.037265"
+    }
+  },
+  {
+    "name": "云泽坤酒馆",
+    "sourceOrder": 17,
+    "address": "南湖东路11号餐车",
+    "point": [
+      118.757027,
+      32.027498
+    ],
+    "matchLevel": "门牌号附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "按南湖东路11号匹配；小程序写的是餐车，实际停放位置需现场确认。",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市建邺区南湖东路11号",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "门址",
+      "address": "江苏省南京市建邺区南湖东路11号",
+      "location": "118.757027,32.027498"
+    }
+  },
+  {
+    "name": "amigo bar(羲和商业广场店)",
+    "sourceOrder": 18,
+    "address": "中山路286号羲和商业广场",
+    "point": [
+      118.785633,
+      32.055074
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "AmigoBar(羲和商业广场店)",
+    "matchedAddress": "中山路286号羲和商业广场",
+    "poiId": "B0J0CM452Q",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周二至周日20:30-02:00（周一店休）",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0J0CM452Q",
+      "name": "AmigoBar(羲和商业广场店)",
+      "address": "中山路286号羲和商业广场",
+      "location": "118.785633,32.055074"
+    }
+  },
+  {
+    "name": "向北精酿 Taproom",
+    "sourceOrder": 19,
+    "address": "黄山路2号绿溢广场中庭",
+    "point": [
+      118.748725,
+      32.017225
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "向北精酿Taproom",
+    "matchedAddress": "黄山路2号绿溢国际广场",
+    "poiId": "B0K1MGLFVS",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 16:30-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0K1MGLFVS",
+      "name": "向北精酿Taproom",
+      "address": "黄山路2号绿溢国际广场",
+      "location": "118.748725,32.017225"
+    }
+  },
+  {
+    "name": "懒鲸酿造(茶南店)",
+    "sourceOrder": 20,
+    "address": "江苏省南京市建邺区明园路110号",
+    "point": [
+      118.744916,
+      32.031494
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "懒鲸酿造(茶南店)",
+    "matchedAddress": "明园路110号",
+    "poiId": "B0MDY6T9B9",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：16:00-24:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MDY6T9B9",
+      "name": "懒鲸酿造(茶南店)",
+      "address": "明园路110号",
+      "location": "118.744916,32.031494"
+    }
+  },
+  {
+    "name": "SU LOUNGE56 Cocktail&Whisky",
+    "sourceOrder": 21,
+    "address": "金鹰G酒店56F(集庆门大街地铁站7A口步行480米)",
+    "point": [
+      118.740265,
+      32.024428
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "SULOUNGE56Cocktail",
+    "matchedAddress": "金鹰G酒店56F(集庆门大街地铁站7A口步行480米)",
+    "poiId": "B0IBZZ5ETS",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0IBZZ5ETS",
+      "name": "SULOUNGE56Cocktail",
+      "address": "金鹰G酒店56F(集庆门大街地铁站7A口步行480米)",
+      "location": "118.740265,32.024428"
+    }
+  },
+  {
+    "name": "抽象CLUB(熙南里店)",
+    "sourceOrder": 22,
+    "address": "升州路熙南里大板巷(三山街地铁站2号口步行260米)",
+    "point": [
+      118.780257,
+      32.024841
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "Abstract.抽象club",
+    "matchedAddress": "升州路熙南里大板巷(三山街地铁站2号口步行260米)",
+    "poiId": "B0K2TAVYHA",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0K2TAVYHA",
+      "name": "Abstract.抽象club",
+      "address": "升州路熙南里大板巷(三山街地铁站2号口步行260米)",
+      "location": "118.780257,32.024841"
+    }
+  },
+  {
+    "name": "懒鲸酿造 (新街口店)",
+    "sourceOrder": 23,
+    "address": "南台巷东2-2号",
+    "point": [
+      118.780716,
+      32.036685
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "懒鲸酿造(新街口店)",
+    "matchedAddress": "南台巷东2-2号(民族大厦西南门旁)",
+    "poiId": "B0K179DNUK",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周日至周四 16：30-24：00 周五至周六 16：00-01：00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0K179DNUK",
+      "name": "懒鲸酿造(新街口店)",
+      "address": "南台巷东2-2号(民族大厦西南门旁)",
+      "location": "118.780716,32.036685"
+    }
+  },
+  {
+    "name": "TEMPLE DRINK",
+    "sourceOrder": 24,
+    "address": "夫子庙大石坝街59-1",
+    "point": [
+      118.790627,
+      32.019471
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "TEMPLE DRINK",
+    "matchedAddress": "夫子庙大石坝街59-1",
+    "poiId": "B0FFMGR2FT",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-01:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0FFMGR2FT",
+      "name": "TEMPLE DRINK",
+      "address": "夫子庙大石坝街59-1",
+      "location": "118.790627,32.019471"
+    }
+  },
+  {
+    "name": "魂浊·精酿宝藏小馆(汉口路店)",
+    "sourceOrder": 25,
+    "address": "汉口路40号1-2号",
+    "point": [
+      118.778529,
+      32.053968
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "魂浊·精酿宝藏小馆(汉口路店)",
+    "matchedAddress": "汉口路40号1-2号",
+    "poiId": "B0I27GGA2C",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间： 10:30-24:00 ",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0I27GGA2C",
+      "name": "魂浊·精酿宝藏小馆(汉口路店)",
+      "address": "汉口路40号1-2号",
+      "location": "118.778529,32.053968"
+    }
+  },
+  {
+    "name": "度·世界精酿啤酒博物馆(河西澎湃力中心店)",
+    "sourceOrder": 26,
+    "address": "江东中路300号澎湃力中心",
+    "point": [
+      118.713712,
+      31.988298
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "度·世界精酿啤酒博物馆(河西旗舰店)",
+    "matchedAddress": "双闸街道江东中路300号澎湃力中心1F-106区",
+    "poiId": "B0I2K7J15Z",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 17:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0I2K7J15Z",
+      "name": "度·世界精酿啤酒博物馆(河西旗舰店)",
+      "address": "双闸街道江东中路300号澎湃力中心1F-106区",
+      "location": "118.713712,31.988298"
+    }
+  },
+  {
+    "name": "ACE homebar(建邺万达店)",
+    "sourceOrder": 27,
+    "address": "建邺万达F座3201",
+    "point": [
+      118.737068,
+      32.030566
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "ACE HomeBar(建邺万达店)",
+    "matchedAddress": "兴隆街道福园街131号万达广场万达中心F座3201室",
+    "poiId": "B0K1DMCGAV",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 20:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0K1DMCGAV",
+      "name": "ACE HomeBar(建邺万达店)",
+      "address": "兴隆街道福园街131号万达广场万达中心F座3201室",
+      "location": "118.737068,32.030566"
+    }
+  },
+  {
+    "name": "Joker Bar & Cafe 小丑吧 & 咖啡",
+    "sourceOrder": 28,
+    "address": "太平北路136-14号商铺",
+    "point": [
+      118.798274,
+      32.057274
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-23:00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "高德名称小丑Joker Hookah bar，太平北路136-14号与小程序地址相符。",
+    "matchedName": "小丑Joker Hookah bar",
+    "matchedAddress": "梅园新村街道太平北路136号-14",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LGF7RSHP",
+      "name": "小丑Joker Hookah bar",
+      "address": "梅园新村街道太平北路136号-14",
+      "location": "118.798274,32.057274"
+    },
+    "poiId": "B0LGF7RSHP"
+  },
+  {
+    "name": "LBZ量不准的早C晚A(三元巷店)",
+    "sourceOrder": 29,
+    "address": "三元巷4-4",
+    "point": [
+      118.783375,
+      32.035101
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "LBZ量不准的早C晚A(三元巷店)",
+    "matchedAddress": "三元巷4-4号(桔子水晶酒店停车场正对面)",
+    "poiId": "B0I24RRXMD",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-01:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0I24RRXMD",
+      "name": "LBZ量不准的早C晚A(三元巷店)",
+      "address": "三元巷4-4号(桔子水晶酒店停车场正对面)",
+      "location": "118.783375,32.035101"
+    }
+  },
+  {
+    "name": "Morpho COFFEE & BAR",
+    "sourceOrder": 30,
+    "address": "石头城路99号南艺后街",
+    "point": [
+      118.749997,
+      32.063862
+    ],
+    "matchLevel": "门牌号附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市鼓楼区石头城路99号",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一,周三,周四,周日 18:00-24:00 周五,周六 18:00-02:00（周二店休）",
+    "coordinateNote": "按小程序石头城路99号匹配，不沿用高德同名店石头城路95号。",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "门址",
+      "address": "江苏省南京市鼓楼区石头城路99号",
+      "location": "118.749997,32.063862"
+    }
+  },
+  {
+    "name": "Fam如梦·之梦HOMEBAR",
+    "sourceOrder": 31,
+    "address": "七贤街一号5栋润铂公寓2904室",
+    "point": [
+      118.733875,
+      31.963225
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "Fam如梦·之梦HOMEBAR",
+    "matchedAddress": "七贤街一号5栋润铂公寓2904室",
+    "poiId": "B0LA199WYX",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 20:30-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LA199WYX",
+      "name": "Fam如梦·之梦HOMEBAR",
+      "address": "七贤街一号5栋润铂公寓2904室",
+      "location": "118.733875,31.963225"
+    }
+  },
+  {
+    "name": "107 Mooking",
+    "sourceOrder": 32,
+    "address": "江宁区乐动力数字体育中心西区",
+    "point": [
+      118.89471,
+      31.912562
+    ],
+    "matchLevel": "同名门店及园区相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "107Mooking",
+    "matchedAddress": "格致路1号",
+    "poiId": "B0MDNOG3XQ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周五 11:00-23:00 周末11:00-24:00",
+    "coordinateNote": "高德店址为格致路1号，另查询确认该址是乐动力江宁数字体育中心；小程序写明西区。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MDNOG3XQ",
+      "name": "107Mooking",
+      "address": "格致路1号",
+      "location": "118.89471,31.912562"
+    },
+    "landmarkEvidence": {
+      "name": "乐动力江宁数字体育中心",
+      "address": "格致路1号江宁大学城内(近南京工程学院)江宁体育中心内"
+    }
+  },
+  {
+    "name": "PUNCH打酒",
+    "sourceOrder": 33,
+    "address": "石鼓路56号",
+    "point": [
+      118.781985,
+      32.039234
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "Punch打酒",
+    "matchedAddress": "石鼓路56号(新街口地铁站15号口步行250米)",
+    "poiId": "B0J2VLLV2E",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0J2VLLV2E",
+      "name": "Punch打酒",
+      "address": "石鼓路56号(新街口地铁站15号口步行250米)",
+      "location": "118.781985,32.039234"
+    }
+  },
+  {
+    "name": "满杯Full Cup酒馆",
+    "sourceOrder": 34,
+    "address": "河西万达G座2819",
+    "point": [
+      118.737275,
+      32.029725
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "满杯Full Cup",
+    "matchedAddress": "万达中心G座2819室",
+    "poiId": "B0MGVLGBIB",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MGVLGBIB",
+      "name": "满杯Full Cup",
+      "address": "万达中心G座2819室",
+      "location": "118.737275,32.029725"
+    }
+  },
+  {
+    "name": "鱼跃社·旷野homebar",
+    "sourceOrder": 35,
+    "address": "九霄梦天地A座1809",
+    "point": [
+      118.916983,
+      32.092428
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "鱼跃社·旷野homebar",
+    "matchedAddress": "学衡路1号九霄梦天地A座F18层",
+    "poiId": "B0LG1H4RQ3",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LG1H4RQ3",
+      "name": "鱼跃社·旷野homebar",
+      "address": "学衡路1号九霄梦天地A座F18层",
+      "location": "118.916983,32.092428"
+    }
+  },
+  {
+    "name": "囧吉香生蚝牛排Bistro(百家湖店)",
+    "sourceOrder": 36,
+    "address": "湖滨路湖滨公寓2A栋一层102号",
+    "point": [
+      118.815351,
+      31.942497
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "囧吉香生蚝牛排Bistro",
+    "matchedAddress": "湖滨路2A栋102",
+    "poiId": "B0H2TZNP5B",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 17:00-01:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0H2TZNP5B",
+      "name": "囧吉香生蚝牛排Bistro",
+      "address": "湖滨路2A栋102",
+      "location": "118.815351,31.942497"
+    }
+  },
+  {
+    "name": "大白歪八db winebar(老门东1865店)",
+    "sourceOrder": 37,
+    "address": "中华门街道养虎巷18号1865产业园E3幢",
+    "point": [
+      118.791848,
+      32.006735
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "大白歪八db winebar(老门东1865店)",
+    "matchedAddress": "养虎巷18号晨光1865创意产业园E3栋",
+    "poiId": "B0L1FL146O",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周二至周日 18:00-24:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0L1FL146O",
+      "name": "大白歪八db winebar(老门东1865店)",
+      "address": "养虎巷18号晨光1865创意产业园E3栋",
+      "location": "118.791848,32.006735"
+    }
+  },
+  {
+    "name": "炁·国潮酒馆(大行宫店)",
+    "sourceOrder": 38,
+    "address": "五老村街道新世纪广场B座1005室",
+    "point": [
+      118.795014,
+      32.040012
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "炁国潮酒馆(大行宫总店)",
+    "matchedAddress": "五老村街道中山东路370号新世纪广场B座1005室",
+    "poiId": "B0L1CP5953",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0L1CP5953",
+      "name": "炁国潮酒馆(大行宫总店)",
+      "address": "五老村街道中山东路370号新世纪广场B座1005室",
+      "location": "118.795014,32.040012"
+    }
+  },
+  {
+    "name": "木洋酒馆·游戏小屋",
+    "sourceOrder": 39,
+    "address": "红花街道汇康路99号13栋10号店铺(霸王茶姬斜对面)",
+    "point": [
+      118.805836,
+      31.980456
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "木洋酒馆.游戏小屋",
+    "matchedAddress": "宁深路东侧堂悦花园13幢10室",
+    "poiId": "B0K2FSF5GQ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-01:30",
+    "coordinateNote": "小程序汇康路99号13栋与高德堂悦花园13幢相符；另查同楼公寓确认汇康路99号为保利堂悦13幢。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0K2FSF5GQ",
+      "name": "木洋酒馆.游戏小屋",
+      "address": "宁深路东侧堂悦花园13幢10室",
+      "location": "118.805836,31.980456"
+    }
+  },
+  {
+    "name": "Bar Elf",
+    "sourceOrder": 40,
+    "address": "石鼓路98号",
+    "point": [
+      118.779752,
+      32.040179
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "BAR ELF",
+    "matchedAddress": "石鼓路98号阳光大厦16层1602室",
+    "poiId": "B0JD3Z1018",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0JD3Z1018",
+      "name": "BAR ELF",
+      "address": "石鼓路98号阳光大厦16层1602室",
+      "location": "118.779752,32.040179"
+    }
+  },
+  {
+    "name": "BLUEMOON·蓝月亮",
+    "sourceOrder": 41,
+    "address": "朝天宫街道汉中路139号五星年华大厦18楼1805（米居年华酒店18楼）",
+    "point": [
+      118.776801,
+      32.04164
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "BLUEMOON·蓝月亮",
+    "matchedAddress": "朝天宫街道汉中路139号五星年华大厦18层1805",
+    "poiId": "B0L0XSK559",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0L0XSK559",
+      "name": "BLUEMOON·蓝月亮",
+      "address": "朝天宫街道汉中路139号五星年华大厦18层1805",
+      "location": "118.776801,32.04164"
+    }
+  },
+  {
+    "name": "VoidBar•清玄•德州",
+    "sourceOrder": 42,
+    "address": "石鼓路98号阳光大厦西南门7层708室清玄BAR",
+    "point": [
+      118.779592,
+      32.040196
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "清玄酒吧",
+    "matchedAddress": "朝天宫街道石鼓路98号阳光大厦708室",
+    "poiId": "B0LK754DYU",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LK754DYU",
+      "name": "清玄酒吧",
+      "address": "朝天宫街道石鼓路98号阳光大厦708室",
+      "location": "118.779592,32.040196"
+    }
+  },
+  {
+    "name": "Driftwood追福（小西湖店）",
+    "sourceOrder": 43,
+    "address": "小西湖29号103室",
+    "point": [
+      118.787249,
+      32.014687
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "浮木Driftwood(小西湖店)",
+    "matchedAddress": "小西湖29号103室",
+    "poiId": "B0LKLC9GPJ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LKLC9GPJ",
+      "name": "浮木Driftwood(小西湖店)",
+      "address": "小西湖29号103室",
+      "location": "118.787249,32.014687"
+    }
+  },
+  {
+    "name": "魔女cafe·bar",
+    "sourceOrder": 44,
+    "address": "建康路2号茂业天地沿街店铺(达美乐和华为中间）",
+    "point": [
+      118.785891,
+      32.022651
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "魔女cafe·bar(茂业总店)",
+    "matchedAddress": "建康路2号茂业天地沿街",
+    "poiId": "B0MBPM0ZGS",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 12:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MBPM0ZGS",
+      "name": "魔女cafe·bar(茂业总店)",
+      "address": "建康路2号茂业天地沿街",
+      "location": "118.785891,32.022651"
+    }
+  },
+  {
+    "name": "日出•高空R&B鸡尾酒吧",
+    "sourceOrder": 45,
+    "address": "融汇时代中心18楼1812-2",
+    "point": [
+      118.820575,
+      31.926275
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "日出R&B高空酒吧",
+    "matchedAddress": "融汇时代中心18楼1812-2",
+    "poiId": "B0L3VAH6XL",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周二至周日 18:30-02:00（周一店休）",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0L3VAH6XL",
+      "name": "日出R&B高空酒吧",
+      "address": "融汇时代中心18楼1812-2",
+      "location": "118.820575,31.926275"
+    }
+  },
+  {
+    "name": "surprise惊喜",
+    "sourceOrder": 46,
+    "address": "太平北路136-11号",
+    "point": [
+      118.797993,
+      32.055841
+    ],
+    "matchLevel": "门牌号匹配（非同名店）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周二到周五14:00-24:00 周六周日10:00-24:00（周一店休）",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "使用小程序太平北路136-11号的门牌坐标；高德收录名称为natural moment，不视为已确认酒馆名称。",
+    "matchedName": "natural moment",
+    "matchedAddress": "太平北路136-11号",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0L199HC0L",
+      "name": "natural moment",
+      "address": "太平北路136-11号",
+      "location": "118.797993,32.055841"
+    },
+    "poiId": "B0L199HC0L"
+  },
+  {
+    "name": "The life",
+    "sourceOrder": 47,
+    "address": "马道街39号",
+    "point": [
+      118.787443,
+      32.014186
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "The life",
+    "matchedAddress": "马道街与箍桶巷交叉口西80米",
+    "poiId": "B0MUZL8LF5",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 15:00-02:00",
+    "coordinateNote": "高德马道街与箍桶巷交叉口西80米位置，与马道街39号地理编码相距约5米。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MUZL8LF5",
+      "name": "The life",
+      "address": "马道街与箍桶巷交叉口西80米",
+      "location": "118.787443,32.014186"
+    }
+  },
+  {
+    "name": "LBZ量不准的早C晚A(中央商场店)",
+    "sourceOrder": 48,
+    "address": "洪武路50号一楼A区24-25号(近新街口步行街)",
+    "point": [
+      118.787033,
+      32.038967
+    ],
+    "matchLevel": "楼栋附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日8:00-02:00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "按小程序洪武路50号匹配，尚未核实一楼A区24-25号的实际入口。",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市秦淮区洪武路50号",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "门址",
+      "address": "江苏省南京市秦淮区洪武路50号",
+      "location": "118.787033,32.038967"
+    }
+  },
+  {
+    "name": "南京KinK9圈子酒吧",
+    "sourceOrder": 49,
+    "address": "华侨路26号二楼",
+    "point": [
+      118.781823,
+      32.046452
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日20:00-02:00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "选择华侨路26号新街口店，不使用民和路18号同名分店。",
+    "matchedName": "南京kink9圈子酒馆(新街口店)",
+    "matchedAddress": "华侨路26号2层204",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0H3G968LZ",
+      "name": "南京kink9圈子酒馆(新街口店)",
+      "address": "华侨路26号2层204",
+      "location": "118.781823,32.046452"
+    },
+    "poiId": "B0H3G968LZ"
+  },
+  {
+    "name": "DASH LAND 大师兰德鸡尾酒吧(洪武路店)",
+    "sourceOrder": 50,
+    "address": "洪武路115号-4号",
+    "point": [
+      118.788782,
+      32.038742
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "DASH LANDxSoul App(洪武路店)",
+    "matchedAddress": "洪武路115号-4号",
+    "poiId": "B0L0ZMDVVQ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日16:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0L0ZMDVVQ",
+      "name": "DASH LANDxSoul App(洪武路店)",
+      "address": "洪武路115号-4号",
+      "location": "118.788782,32.038742"
+    }
+  },
+  {
+    "name": "熊布布HooKahLounge",
+    "sourceOrder": 51,
+    "address": "南台巷东与南台巷交叉口西南60米",
+    "point": [
+      118.780225,
+      32.036725
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "熊布布Hookah Lounge",
+    "matchedAddress": "南台巷东与南台巷交叉口西南60米",
+    "poiId": "B0MU6RVMKX",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 14:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MU6RVMKX",
+      "name": "熊布布Hookah Lounge",
+      "address": "南台巷东与南台巷交叉口西南60米",
+      "location": "118.780225,32.036725"
+    }
+  },
+  {
+    "name": "Myna Bar",
+    "sourceOrder": 52,
+    "address": "石鼓路阳光大厦20层2003",
+    "point": [
+      118.77951,
+      32.040302
+    ],
+    "matchLevel": "楼栋附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市秦淮区石鼓路阳光大厦(西南门)20层",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 20:00-02:00",
+    "coordinateNote": "按小程序石鼓路阳光大厦20层匹配；舍弃高德同名店王府大街29号位置。",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "门址",
+      "address": "江苏省南京市秦淮区石鼓路阳光大厦(西南门)20层",
+      "location": "118.779510,32.040302"
+    }
+  },
+  {
+    "name": "壹汀E·TIng德州主题酒馆(新街口店)",
+    "sourceOrder": 53,
+    "address": "五老村街道洪武路38号正洪大厦1106室",
+    "point": [
+      118.786826,
+      32.039747
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "壹汀E·TIng Homebar(新街口店)",
+    "matchedAddress": "五老村街道洪武路38号正洪大厦1106室",
+    "poiId": "B0LRJLIX6T",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 20:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0LRJLIX6T",
+      "name": "壹汀E·TIng Homebar(新街口店)",
+      "address": "五老村街道洪武路38号正洪大厦1106室",
+      "location": "118.786826,32.039747"
+    }
+  },
+  {
+    "name": "酵母商店民谣酒吧",
+    "sourceOrder": 54,
+    "address": "评事街152号",
+    "point": [
+      118.780159,
+      32.027928
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "酵母商店民谣酒吧",
+    "matchedAddress": "评事街152号",
+    "poiId": "B0MU4CAZEZ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日19:00-1:30",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MU4CAZEZ",
+      "name": "酵母商店民谣酒吧",
+      "address": "评事街152号",
+      "location": "118.780159,32.027928"
+    }
+  },
+  {
+    "name": "AfterTheRain Coffee·餐·Bar(户部街店)",
+    "sourceOrder": 55,
+    "address": "户部街24号-6(常府街地铁站4号口步行310米)",
+    "point": [
+      118.791645,
+      32.035043
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "AfterTheRainCoffee",
+    "matchedAddress": "户部街24号-6(常府街地铁站4号口步行310米)",
+    "poiId": "B0MUZC7XZB",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：参考营业时间：10：00-24：00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MUZC7XZB",
+      "name": "AfterTheRainCoffee",
+      "address": "户部街24号-6(常府街地铁站4号口步行310米)",
+      "location": "118.791645,32.035043"
+    }
+  },
+  {
+    "name": "So Hookah Lounge",
+    "sourceOrder": 56,
+    "address": "王府大街57-1 SO LOUNGE",
+    "point": [
+      118.779232,
+      32.037943
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周二至周日 19：00-2：00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "高德名为SOLOUNGE，王府大街57-1与小程序SO LOUNGE一致。",
+    "matchedName": "SOLOUNGE",
+    "matchedAddress": "王府大街57-1 SO LOUNGE",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0MRDU9EKT",
+      "name": "SOLOUNGE",
+      "address": "王府大街57-1 SO LOUNGE",
+      "location": "118.779232,32.037943"
+    },
+    "poiId": "B0MRDU9EKT"
+  },
+  {
+    "name": "Vibes维布斯德州竞技酒吧",
+    "sourceOrder": 57,
+    "address": "新街口街道中山路286号羲和商业广场负一楼",
+    "point": [
+      118.785414,
+      32.054668
+    ],
+    "matchLevel": "商业广场附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18.00-02.00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "使用小程序中山路286号羲和商业广场位置，尚未核实负一楼入口。",
+    "matchedName": "",
+    "matchedAddress": "江苏省南京市玄武区新街口街道街道中山路羲和商业广场",
+    "coordinateEvidence": {
+      "type": "geocode/geo",
+      "level": "兴趣点",
+      "address": "江苏省南京市玄武区新街口街道街道中山路羲和商业广场",
+      "location": "118.785414,32.054668"
+    }
+  },
+  {
+    "name": "No Title",
+    "sourceOrder": 58,
+    "address": "鼎新路1-4号",
+    "point": [
+      118.777355,
+      32.028002
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "NoTitle",
+    "matchedAddress": "鼎新路1-4号",
+    "poiId": "B0GRUM59XJ",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 19:00–02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0GRUM59XJ",
+      "name": "NoTitle",
+      "address": "鼎新路1-4号",
+      "location": "118.777355,32.028002"
+    }
+  },
+  {
+    "name": "魁River house河牌屋·Finale(南京店)",
+    "sourceOrder": 59,
+    "address": "洪武路街道建康路1号B1-S-10号",
+    "point": [
+      118.785874,
+      32.023772
+    ],
+    "matchLevel": "商业体附近（约定位）",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18：00-02：00",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "coordinateNote": "使用小程序建康路1号水游城商业体位置，未核实B1-S-10号的实际入口。",
+    "matchedName": "南京鹏欣·水游城",
+    "matchedAddress": "建康路1号",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B001911L8Z",
+      "name": "南京鹏欣·水游城",
+      "address": "建康路1号",
+      "location": "118.785874,32.023772"
+    },
+    "poiId": "B001911L8Z"
+  },
+  {
+    "name": "LAND Pub(熙南里店)",
+    "sourceOrder": 60,
+    "address": "升州路216号(三山街地铁站2号口步行450米)",
+    "point": [
+      118.778387,
+      32.025433
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "Land pub",
+    "matchedAddress": "升州路216号(三山街地铁站2号口步行450米)",
+    "poiId": "B0KR3SXU75",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 18:30-2:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0KR3SXU75",
+      "name": "Land pub",
+      "address": "升州路216号(三山街地铁站2号口步行450米)",
+      "location": "118.778387,32.025433"
+    }
+  },
+  {
+    "name": "蛮兽烧烤·铁板烧",
+    "sourceOrder": 61,
+    "address": "升州路190号(三山街地铁站2号口步行410米)",
+    "point": [
+      118.77938,
+      32.02523
+    ],
+    "matchLevel": "同名门店及分店地址相符",
+    "source": "酒鬼巡游记小程序南京26五期适用门店",
+    "sourceDate": "2026-11-26",
+    "matchedName": "蛮兽烧烤·铁板烧(升州路)",
+    "matchedAddress": "升州路190号(三山街地铁站2号口步行410米)",
+    "poiId": "B0H2OZCL80",
+    "coordinateSource": "高德地图 GCJ-02",
+    "coordinateCheckedAt": "2026-11-26",
+    "hours": "参考营业时间：周一至周日 17:00-02:00",
+    "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。",
+    "coordinateEvidence": {
+      "type": "place/text",
+      "id": "B0H2OZCL80",
+      "name": "蛮兽烧烤·铁板烧(升州路)",
+      "address": "升州路190号(三山街地铁站2号口步行410米)",
+      "location": "118.77938,32.02523"
+    }
+  }
+]

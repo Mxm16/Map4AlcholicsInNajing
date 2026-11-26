@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="随时随地出发，找到离你最近的酒鬼巡游记参与酒馆。">
+<title>酒鬼地图暖心版 · 南京</title>
+<style>
+:root{
+  --bg:#0e0d12;
+  --card:#1c1923;
+  --card-hi:#241f2e;
+  --ink:#f3eee6;
+  --ink-soft:#a49db0;
+  --line:#2e2938;
+  --neon:#ff7a3d;
+  --neon-2:#ffb347;
+  --neon-glow:rgba(255,122,61,.35);
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:15px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,122,61,.16), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, rgba(120,80,255,.10), transparent 70%),
+    var(--bg);
+  background-attachment:fixed;
+}
+main{max-width:720px;margin:auto;padding:0 18px 8px}
+
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 0;border-bottom:1px solid var(--line);
+  font-size:12px;color:var(--ink-soft);
+}
+.brand{
+  font-size:17px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:.5px;
+  text-shadow:0 0 18px var(--neon-glow);
+}
+.brand span{font-size:10px;letter-spacing:2px;margin-left:8px;color:var(--neon);font-weight:500}
+.nav-btn{
+  background:transparent;color:var(--neon-2);border:1px solid var(--neon);
+  padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;box-shadow:none;
+}
+.nav-btn:hover{background:rgba(255,122,61,.1);transform:none;box-shadow:0 0 15px -4px var(--neon-glow)}
+
+/* 视图切换核心 CSS */
+.view{display:none;animation:fadeIn .3s ease-out}
+.view.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.hero{padding:44px 0 26px;position:relative}
+.eyebrow{
+  font-size:12px;letter-spacing:2px;color:var(--neon);
+  font-weight:600;margin-bottom:14px;
+  text-shadow:0 0 14px var(--neon-glow);
+}
+h1{
+  font-size:clamp(30px,7.2vw,42px);
+  line-height:1.25;margin:0 0 18px;letter-spacing:-1px;font-weight:900;
+}
+h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--neon),var(--neon-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 30px var(--neon-glow);
+}
+.hero p{color:var(--ink-soft);line-height:1.85;margin:0 0 12px;font-size:14px}
+.hero p strong{color:var(--ink);font-weight:600}
+.hero p .name{color:var(--neon-2);font-weight:700}
+
+.panel{
+  background:var(--card);padding:18px;
+  border:1px solid var(--line);border-radius:14px;margin-bottom:24px;
+  box-shadow:0 20px 40px -24px #000;
+}
+.panel h2{font-size:15px;margin:0 0 8px;font-weight:700}
+#status{font-size:13px;color:var(--ink-soft);margin:0 0 12px;line-height:1.6}
+
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input:not([type=checkbox]){
+  background:#100e15;color:var(--ink);
+  border:1px solid var(--line);border-radius:10px;
+  padding:13px 14px;font:inherit;min-width:160px;flex:1;
+  transition:border-color .2s,box-shadow .2s;
+}
+input:not([type=checkbox]):focus{
+  border-color:var(--neon);outline:none;
+  box-shadow:0 0 0 3px var(--neon-glow);
+}
+input:not([type=checkbox])::placeholder{color:#6d6579}
+button,select,.maplink{font:inherit;border:0;border-radius:10px;padding:12px 18px;cursor:pointer;transition:all .2s}
+button{
+  background:linear-gradient(135deg,var(--neon),var(--neon-2));
+  color:#1a0f06;font-weight:800;font-size:14px;
+  box-shadow:0 6px 20px -6px var(--neon-glow);
+}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+button:disabled{opacity:.45;cursor:wait;transform:none;filter:none}
+.secondary,select{
+  background:#1a1722;color:var(--ink);border:1px solid var(--line);
+}
+.secondary:hover,select:hover{background:var(--card-hi)}
+
+details{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+summary{cursor:pointer;color:var(--neon);font-size:14px;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"›";display:inline-block;margin-right:6px;transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}
+details p{font-size:13px;color:var(--ink-soft);line-height:1.7;margin:10px 0}
+
+a{color:var(--neon)}
+
+.listhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.listhead h2{font-size:16px;margin:0;font-weight:800}
+small{font-weight:400;color:var(--ink-soft);font-size:11px}
+#coverage{font-size:12px;color:var(--ink-soft);margin:0 0 14px}
+
+.filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.filters label{font-size:12px;color:var(--ink-soft)}.filters select{padding:7px}.visit-actions{display:flex;gap:6px;padding-left:12px;flex-wrap:wrap}.visit-actions button{padding:6px 9px;font-size:11px}.visit-actions .active{background:var(--neon);color:#1a0f06}
+#list{display:grid;grid-template-columns:1fr;gap:10px}
+
+.card{
+  border:1px solid var(--line);background:var(--card);border-radius:14px;
+  padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;
+  position:relative;transition:border-color .2s,transform .2s;
+}
+.card:hover{border-color:rgba(255,122,61,.45);transform:translateY(-1px)}
+.card::before{
+  content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;
+  border-radius:0 3px 3px 0;
+  background:linear-gradient(180deg,var(--neon),var(--neon-2));
+  box-shadow:0 0 12px var(--neon-glow);
+}
+.card h3{font-size:16px;line-height:1.5;margin:0;font-weight:800;padding-left:12px}
+.distance{
+  font-size:15px;font-weight:800;color:var(--neon-2);
+  white-space:nowrap;flex-shrink:0;
+  text-shadow:0 0 12px var(--neon-glow);
+}
+.card p{font-size:13px;margin:0;color:var(--ink-soft);line-height:1.6;padding-left:12px}
+.card p:first-of-type{color:var(--ink)}
+.card small{margin:0;font-size:11px;color:#6d6579;padding-left:12px}
+.actions{display:flex;gap:8px;margin-top:4px;padding-left:12px}
+.maplink{
+  font-size:13px;text-decoration:none;display:inline-block;
+  border:1px solid var(--neon);color:var(--neon);background:transparent;
+  padding:8px 16px;border-radius:10px;font-weight:700;
+}
+.maplink:hover{background:rgba(255,122,61,.12);box-shadow:0 0 18px -4px var(--neon-glow)}
+
+#placeholder{
+  padding:28px 20px;color:var(--ink-soft);font-size:13px;line-height:1.7;
+  border:1px dashed var(--line);border-radius:14px;text-align:center;background:var(--card);
+}
+
+.place-option{
+  width:100%;display:flex;flex-direction:column;align-items:flex-start;
+  text-align:left;gap:4px;margin-top:8px;
+  background:#1a1722;color:var(--ink);
+  border:1px solid var(--line);padding:12px 14px;border-radius:10px;
+  box-shadow:none;font-weight:400;
+}
+.place-option span{font-size:12px;color:var(--ink-soft)}
+.place-option:hover{background:var(--card-hi);border-color:var(--neon);transform:none;filter:none}
+.place-option strong{font-size:14px;font-weight:700}
+
+#placeResults{margin-top:8px}
+
+/* ====== 官方路线专属样式 ====== */
+.route-group{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:20px 18px;margin-bottom:24px;box-shadow:0 20px 40px -24px #000;
+}
+.route-group h2{
+  font-size:17px;margin:0 0 6px;font-weight:800;
+  color:var(--neon-2);display:flex;align-items:center;gap:8px;
+}
+.route-group h2::before{
+  content:"";display:inline-block;width:8px;height:8px;
+  border-radius:50%;background:var(--neon);box-shadow:0 0 10px var(--neon);
+}
+.route-note{
+  font-size:12px;color:var(--ink-soft);margin:0 0 16px;
+  padding-bottom:14px;border-bottom:1px dashed var(--line);
+}
+.bar-list{display:flex;flex-direction:column;gap:16px}
+.bar-item{border-left:2px solid var(--line);padding-left:12px;position:relative}
+.bar-item::before{
+  content:"";position:absolute;left:-5px;top:6px;width:8px;height:8px;
+  border-radius:50%;background:var(--bg);border:2px solid var(--neon);
+}
+.bar-item h3{font-size:14px;margin:0 0 4px;font-weight:700;color:var(--ink);line-height:1.4}
+.bar-time{font-size:12px;color:var(--neon-2);margin-bottom:6px}
+.menu-list{font-size:13px;color:var(--ink-soft);line-height:1.8;margin:0;padding-left:0;list-style:none}
+.menu-list li::before{content:"·";margin-right:6px;color:var(--line)}
+
+footer{
+  font-size:11px;color:#6d6579;line-height:1.9;
+  padding:28px 0 40px;border-top:1px solid var(--line);margin-top:20px;
+}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:2px solid var(--neon-2);outline-offset:2px;
+}
+@media(max-width:640px){
+  main{padding:0 14px 8px}
+  header{font-size:11px}
+  .brand{font-size:16px}
+  .brand span{display:none}
+  .hero{padding:30px 0 20px}
+  .panel{padding:16px}
+  .row>button{flex-grow:1}
+}
+
+.header-actions,.profile-head,.dialog-actions{display:flex;gap:8px;align-items:center}.profile-head{flex-wrap:wrap}.profile-head>div{flex:1}.avatar{font-size:34px}.quiet{font-size:12px;color:var(--ink-soft)}.profile-item{border-top:1px solid var(--line);padding:12px 0;display:flex;justify-content:space-between;gap:8px;align-items:center}.profile-item strong{font-size:13px}.profile-item small{display:block;margin-top:4px}.profile-item button{padding:7px 10px;font-size:11px}.review-badge{position:absolute;right:12px;top:12px;color:var(--neon-2);font-size:11px;border:1px solid var(--neon);border-radius:6px;padding:2px 5px}dialog{max-width:min(420px,calc(100vw - 28px));width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:20px}dialog::backdrop{background:rgba(0,0,0,.75)}dialog form{display:grid;gap:14px}dialog label{display:grid;gap:6px;font-size:13px}dialog input,dialog select,dialog textarea{width:100%;background:#100e15;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}dialog textarea{min-height:100px;resize:vertical}.dialog-actions{justify-content:flex-end}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="brand" href="./">酒鬼地图暖心版<span>南京 · 26五期</span></a>
+  <div class="header-actions"><button id="navToggle" class="nav-btn">全部 61 家</button><button id="profileToggle" class="nav-btn">☺ 我的</button></div>
+</header>
+
+<!-- 视图 1：附近酒馆 -->
+<div id="view-home" class="view active">
+  <section class="hero">
+    <div class="eyebrow">EVERY NIGHT IS A ROUTE</div>
+    <h1>不用路线，<br><em>出门就是喝。</em></h1>
+    <p>灵感来源于没按地图路线走，凌晨在马路上暴走了 <strong>2 个小时</strong>，最后只喝到几家的两个酒鬼 <span class="name">mxm&amp;gyt</span>。</p>
+    <p>于是我们决定做个东西：<strong>打开就能看到离你最近的参与酒馆</strong>。不用规划路线，不用凑时间，站在哪条街，就在哪条街 high 起来。</p>
+  </section>
+
+  <section class="panel">
+    <h2>你现在在哪？</h2>
+    <p id="status" role="status" aria-live="polite">正在等你打开定位…</p>
+    <button id="locate">重新定位</button>
+    <details id="manual" open>
+      <summary>输入地点，找附近的酒馆</summary>
+      <p>搜地铁站、商场、学校、酒店都行，选对结果就显示最近的几家。</p>
+      <div class="row">
+        <input id="origin" aria-label="出发点" placeholder="例如：新街口、夫子庙、南京大学">
+        <button id="go">搜索地点</button>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <div class="listhead">
+      <h2 id="resultTitle">离你最近的几家</h2>
+    </div>
+    <div class="filters"><label>类型 <select id="kind"><option value="all">全部</option><option value="cocktail">鸡尾酒／威士忌</option><option value="beer">精酿／啤酒</option><option value="home">Homebar／社交</option><option value="game">桌游／运动</option></select></label><label><input type="checkbox" id="hideToday" checked> 隐藏今日已去</label><label><input type="checkbox" id="hideHistory"> 隐藏历史去过</label></div><p id="syncStatus" role="status" aria-live="polite">正在读取本机到访记录…</p><p id="coverage"></p>
+    <div id="placeholder">定位一开，最近的酒馆就冒出来了。</div>
+    <div id="list" aria-live="polite"></div>
+  </section>
+</div>
+
+<div id="view-profile" class="view">
+  <section class="hero"><div class="eyebrow">MY NIGHT</div><h1>我的酒鬼档案</h1></section>
+  <section class="panel"><div class="profile-head"><span id="profileAvatar" class="avatar">🍸</span><div><h2 id="profileName">酒鬼朋友</h2><small id="profileCount">去过 0 家 · 打卡 0 次</small></div><button id="editProfile" class="secondary">编辑资料</button></div></section>
+  <section class="panel"><div class="listhead"><h2>今日已去</h2><button id="clearToday" class="secondary">清空今日已去</button></div><p class="quiet">按北京时间上午 10 点换日，凌晨仍算同一晚。</p><div id="todayList"></div></section>
+  <section class="panel"><h2>历史去过</h2><input id="historySearch" aria-label="搜索历史去过的酒馆" placeholder="搜索去过的酒馆"><div id="historyList"></div></section>
+</div>
+<dialog id="profileDialog"><form id="profileForm" method="dialog"><h2>编辑个人资料</h2><label>昵称<input id="nickname" maxlength="24" required></label><label>头像<select id="avatarChoice"><option>🍸</option><option>🍺</option><option>🥂</option><option>🍷</option><option>🎲</option><option>🌙</option><option>✨</option><option>🐱</option></select></label><div class="dialog-actions"><button type="button" class="secondary" id="cancelProfile">取消</button><button type="submit">保存</button></div></form></dialog>
+<dialog id="reviewDialog"><form id="reviewForm" method="dialog"><h2 id="reviewTitle">我的评价</h2><label>评分（可选）<select id="reviewRating"><option value="">不评分</option><option value="5">5 · 很喜欢</option><option value="4">4 · 推荐</option><option value="3">3 · 还行</option><option value="2">2 · 一般</option><option value="1">1 · 不推荐</option></select></label><label>短评（可选）<textarea id="reviewText" maxlength="500" placeholder="这家的氛围和酒怎么样？"></textarea></label><p class="quiet">评价仅自己可见，可随时修改或删除。</p><div class="dialog-actions"><button type="button" class="secondary" id="deleteReview">删除评价</button><button type="button" class="secondary" id="cancelReview">取消</button><button type="submit">保存</button></div></form></dialog>
+<!-- 视图 2：官方路线 -->
+<div id="view-routes" class="view">
+  <section class="hero"><div class="eyebrow">NANJING · ALL PLACES</div><h1>南京 61 家，<br><em>提前慢慢挑。</em></h1><p>按小程序名单原始顺序展示。非营业时段也能查看；营业时间按小程序原文展示，仅供参考。</p></section>
+  <section class="panel"><label for="catalogSearch">搜索名单中的酒馆</label><input id="catalogSearch" placeholder="输入店名或地址" style="width:100%;margin-top:12px"><p id="catalogCount" class="quiet"></p></section><section id="catalogList"></section>
+</div>
+
+<footer>
+非官方辅助工具 · 南京站 26 五期适用门店共 61 家，名单由用户从「酒鬼巡游记」微信小程序活动详情页抄录，读取日期 2026-11-26。<br>
+61家地址及参考营业时间已从小程序读取，坐标按分店地址逐一匹配高德。部分使用楼栋、商业体或路口附近坐标，已单独标明；实际入口、营业安排及活动酒款请以商家确认为准。<br>
+按直线距离排序；步行时间为高德路线预估。搜索词及步行查询起终点会发送给高德。打卡、评价和昵称只保存在当前浏览器。
+</footer>
+</main>
+
+<script>
+const btnNav=document.getElementById('navToggle'),btnProfile=document.getElementById('profileToggle');
+const viewHome=document.getElementById('view-home'),viewRoutes=document.getElementById('view-routes'),viewProfile=document.getElementById('view-profile');
+let currentView='home';
+function switchView(next){currentView=next;for(const [name,el] of [['home',viewHome],['routes',viewRoutes],['profile',viewProfile]])el.classList.toggle('active',name===next);btnNav.textContent=next==='routes'?'← 返回最近酒馆':'全部 61 家';btnProfile.textContent=next==='profile'?'← 返回附近':'☺ 我的';if(next==='profile')renderProfile();if(next==='routes')renderCatalog();window.scrollTo({top:0,behavior:'smooth'})}
+btnNav.onclick=()=>switchView(currentView==='routes'?'home':'routes');btnProfile.onclick=()=>switchView(currentView==='profile'?'home':'profile');
+
+// ----- 以下为核心业务逻辑，未做修改 -----
+window.BARS=[{"name": "裕诚雪茄吧(水游城假日酒店店)", "sourceOrder": 1, "address": "旧王府与建康路交叉口西北160米", "point": [118.785775, 32.024175], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "裕诚雪茄吧(水游城假日酒店店)", "matchedAddress": "旧王府与建康路交叉口西北160米", "poiId": "B0MR7RXSMQ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间周一至周日18:30-2:0", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MR7RXSMQ", "name": "裕诚雪茄吧(水游城假日酒店店)", "address": "旧王府与建康路交叉口西北160米", "location": "118.785775,32.024175"}}, {"name": "情绪出口酒吧Ventb", "sourceOrder": 2, "address": "淳化街道兴宁路武夷绿洲商业广场二楼Vent情绪出口Bar", "point": [118.841864, 31.930466], "matchLevel": "商业广场附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间周一至周日18:30-2:00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "按小程序武夷绿洲商业广场匹配，尚未核实二楼入口。", "matchedName": "武夷绿洲商业广场", "matchedAddress": "天元中路31号(竹山路地铁站2号口步行300米)", "coordinateEvidence": {"type": "place/text", "id": "B0LU7SYY6B", "name": "武夷绿洲商业广场", "address": "天元中路31号(竹山路地铁站2号口步行300米)", "location": "118.841864,31.930466"}, "poiId": "B0LU7SYY6B"}, {"name": "麋鹿Q&A Gin·Cocktail Bar", "sourceOrder": 3, "address": "太平南路102号NOWS新座二号1层A-09-01铺", "point": [118.793454, 32.038557], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "麋鹿Gin&CocktailBar", "matchedAddress": "太平南路102号NOWS新座二号1层A-09-01铺", "poiId": "B0JU9L9EFF", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-24:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0JU9L9EFF", "name": "麋鹿Gin&CocktailBar", "address": "太平南路102号NOWS新座二号1层A-09-01铺", "location": "118.793454,32.038557"}}, {"name": "德味酒馆", "sourceOrder": 4, "address": "双闸街道江东南路与龙王大街交汇处金地中心菁华", "point": [118.690814, 31.976417], "matchLevel": "园区附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日 18:00-02:00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "小程序未提供门牌铺位，使用金地中心菁华位置。", "matchedName": "金地中心菁华", "matchedAddress": "保东路与龙王大街交叉口东180米", "coordinateEvidence": {"type": "place/text", "id": "B0FFIJDSVR", "name": "金地中心菁华", "address": "保东路与龙王大街交叉口东180米", "location": "118.690814,31.976417"}, "poiId": "B0FFIJDSVR"}, {"name": "桥下酒馆", "sourceOrder": 5, "address": "阳光路3号太阳宫广场内（北侧）", "point": [118.814168, 32.065378], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "桥下酒馆", "matchedAddress": "岗子村地铁站3号口旁边阳光路3号A30-3商铺", "poiId": "B0K0X1NGDV", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周四,周日 18:00-01:30 周五,周六 18:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0K0X1NGDV", "name": "桥下酒馆", "address": "岗子村地铁站3号口旁边阳光路3号A30-3商铺", "location": "118.814168,32.065378"}}, {"name": "SingleBaby•露营酒吧", "sourceOrder": 6, "address": "南京市中山南路398号南捕厅1号", "point": [118.782435, 32.026361], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "Singlebaby•露营酒吧", "matchedAddress": "中山南路398号南捕厅1号", "poiId": "B0J3UBTIWX", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 18:00-01:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0J3UBTIWX", "name": "Singlebaby•露营酒吧", "address": "中山南路398号南捕厅1号", "location": "118.782435,32.026361"}}, {"name": "福气增增·居酒屋", "sourceOrder": 7, "address": "南京市秦淮区仙鹤街149号 福·烧鸟酒场", "point": [118.776623, 32.025212], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "福气增增·飲食酒屋", "matchedAddress": "仙鹤街149号", "poiId": "B0JRRAQ3PH", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 17:30-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0JRRAQ3PH", "name": "福气增增·飲食酒屋", "address": "仙鹤街149号", "location": "118.776623,32.025212"}}, {"name": "酒趣 Wine pop葡萄酒吧", "sourceOrder": 8, "address": "江苏省南京市秦淮区五老村街道太平南路102号(大行宫地铁站出入口步行250米)", "point": [118.79326, 32.038587], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "酒趣Winepop葡萄酒吧", "matchedAddress": "五老村街道太平南路102号1层A-11-02", "poiId": "B0MR1REI19", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 17:30-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MR1REI19", "name": "酒趣Winepop葡萄酒吧", "address": "五老村街道太平南路102号1层A-11-02", "location": "118.79326,32.038587"}}, {"name": "龙王隐世料理·烧肉酒场(新街口龙王庙店)", "sourceOrder": 9, "address": "龙王庙前1号(常府街地铁站1号口步行460米)", "point": [118.788327, 32.031912], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "龙王隐世料理•烧肉酒场(龙王庙小区店)", "matchedAddress": "龙王庙前1号(西方巷与交叉口)", "poiId": "B0JUOC8ZMC", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 20:00-23:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0JUOC8ZMC", "name": "龙王隐世料理•烧肉酒场(龙王庙小区店)", "address": "龙王庙前1号(西方巷与交叉口)", "location": "118.788327,32.031912"}}, {"name": "裕诚&大顽茄雪茄威士忌俱乐部(象房村路店)", "sourceOrder": 10, "address": "象房村路与扇骨营北路交叉口东南80米", "point": [118.802437, 32.021824], "matchLevel": "路口附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "", "matchedAddress": "江苏省南京市秦淮区象房村路/扇骨营北路", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：19:30-24:00", "coordinateNote": "小程序位置为路口东南80米，坐标暂取对应路口；接近后请按原始地址寻找。", "coordinateEvidence": {"type": "geocode/geo", "level": "道路交叉路口", "address": "江苏省南京市秦淮区象房村路/扇骨营北路", "location": "118.802437,32.021824"}}, {"name": "2467Bar", "sourceOrder": 11, "address": "俞家巷10号104室", "point": [118.779944, 32.038251], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "2467Bar", "matchedAddress": "俞家巷10号104室", "poiId": "B0H6O7U8JW", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周日至周四18:00-24:00 周五、周六18:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0H6O7U8JW", "name": "2467Bar", "address": "俞家巷10号104室", "location": "118.779944,32.038251"}}, {"name": "LOST HORIZON BAR", "sourceOrder": 12, "address": "熙南里中山南路400号(三山街地铁站2出口)", "point": [118.78201, 32.025413], "matchLevel": "楼栋附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "", "matchedAddress": "江苏省南京市秦淮区熙南里中山南路400号", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-04:00", "coordinateNote": "按小程序中山南路400号匹配；未沿用高德大板巷4-4号的不同门牌。", "coordinateEvidence": {"type": "geocode/geo", "level": "门址", "address": "江苏省南京市秦淮区熙南里中山南路400号", "location": "118.782010,32.025413"}}, {"name": "ROOF BAR", "sourceOrder": 13, "address": "万科都会天地c1-105(108邻家超市旁边上2楼)", "point": [118.796681, 31.963325], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "ROOF BAR", "matchedAddress": "万科都会天地c1-105(108邻家超市旁边上2楼)", "poiId": "B0I07MLJ5I", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 18:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0I07MLJ5I", "name": "ROOF BAR", "address": "万科都会天地c1-105(108邻家超市旁边上2楼)", "location": "118.796681,31.963325"}}, {"name": "Red Room虹房酒吧(百家湖1912店)", "sourceOrder": 14, "address": "秣陵街道双龙大道1680号俱乐部休闲区30幢百家湖1912街区5号102铺位", "point": [118.818094, 31.931246], "matchLevel": "街区附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "", "matchedAddress": "江苏省南京市江宁区秣陵街道双龙大道1680号俱乐部幢百家湖1912街区5号", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 17:00-02:00", "coordinateNote": "按小程序百家湖1912地址匹配；高德同名店标为10幢，与小程序5号102铺位不一致，暂取街区附近。", "coordinateEvidence": {"type": "geocode/geo", "level": "小巷", "address": "江苏省南京市江宁区秣陵街道双龙大道1680号俱乐部幢百家湖1912街区5号", "location": "118.818094,31.931246"}}, {"name": "上岸酒馆", "sourceOrder": 15, "address": "升州路326号1层", "point": [118.775307, 32.026836], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "上岸酒馆", "matchedAddress": "升州路326号1层", "poiId": "B0KUNZMIYL", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：18:00–02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0KUNZMIYL", "name": "上岸酒馆", "address": "升州路326号1层", "location": "118.775307,32.026836"}}, {"name": "枪花小酒馆啤休酿造(莫愁路店)", "sourceOrder": 16, "address": "莫愁路357号", "point": [118.774575, 32.037265], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "枪花小酒馆啤休酿造", "matchedAddress": "莫愁路357号(上海路地铁站6A口步行410米)", "poiId": "B0I2MRGRVQ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 16:30-00:30", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0I2MRGRVQ", "name": "枪花小酒馆啤休酿造", "address": "莫愁路357号(上海路地铁站6A口步行410米)", "location": "118.774575,32.037265"}}, {"name": "云泽坤酒馆", "sourceOrder": 17, "address": "南湖东路11号餐车", "point": [118.757027, 32.027498], "matchLevel": "门牌号附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "按南湖东路11号匹配；小程序写的是餐车，实际停放位置需现场确认。", "matchedName": "", "matchedAddress": "江苏省南京市建邺区南湖东路11号", "coordinateEvidence": {"type": "geocode/geo", "level": "门址", "address": "江苏省南京市建邺区南湖东路11号", "location": "118.757027,32.027498"}}, {"name": "amigo bar(羲和商业广场店)", "sourceOrder": 18, "address": "中山路286号羲和商业广场", "point": [118.785633, 32.055074], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "AmigoBar(羲和商业广场店)", "matchedAddress": "中山路286号羲和商业广场", "poiId": "B0J0CM452Q", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周二至周日20:30-02:00（周一店休）", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0J0CM452Q", "name": "AmigoBar(羲和商业广场店)", "address": "中山路286号羲和商业广场", "location": "118.785633,32.055074"}}, {"name": "向北精酿 Taproom", "sourceOrder": 19, "address": "黄山路2号绿溢广场中庭", "point": [118.748725, 32.017225], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "向北精酿Taproom", "matchedAddress": "黄山路2号绿溢国际广场", "poiId": "B0K1MGLFVS", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 16:30-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0K1MGLFVS", "name": "向北精酿Taproom", "address": "黄山路2号绿溢国际广场", "location": "118.748725,32.017225"}}, {"name": "懒鲸酿造(茶南店)", "sourceOrder": 20, "address": "江苏省南京市建邺区明园路110号", "point": [118.744916, 32.031494], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "懒鲸酿造(茶南店)", "matchedAddress": "明园路110号", "poiId": "B0MDY6T9B9", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：16:00-24:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MDY6T9B9", "name": "懒鲸酿造(茶南店)", "address": "明园路110号", "location": "118.744916,32.031494"}}, {"name": "SU LOUNGE56 Cocktail&Whisky", "sourceOrder": 21, "address": "金鹰G酒店56F(集庆门大街地铁站7A口步行480米)", "point": [118.740265, 32.024428], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "SULOUNGE56Cocktail", "matchedAddress": "金鹰G酒店56F(集庆门大街地铁站7A口步行480米)", "poiId": "B0IBZZ5ETS", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0IBZZ5ETS", "name": "SULOUNGE56Cocktail", "address": "金鹰G酒店56F(集庆门大街地铁站7A口步行480米)", "location": "118.740265,32.024428"}}, {"name": "抽象CLUB(熙南里店)", "sourceOrder": 22, "address": "升州路熙南里大板巷(三山街地铁站2号口步行260米)", "point": [118.780257, 32.024841], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "Abstract.抽象club", "matchedAddress": "升州路熙南里大板巷(三山街地铁站2号口步行260米)", "poiId": "B0K2TAVYHA", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 18:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0K2TAVYHA", "name": "Abstract.抽象club", "address": "升州路熙南里大板巷(三山街地铁站2号口步行260米)", "location": "118.780257,32.024841"}}, {"name": "懒鲸酿造 (新街口店)", "sourceOrder": 23, "address": "南台巷东2-2号", "point": [118.780716, 32.036685], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "懒鲸酿造(新街口店)", "matchedAddress": "南台巷东2-2号(民族大厦西南门旁)", "poiId": "B0K179DNUK", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周日至周四 16：30-24：00 周五至周六 16：00-01：00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0K179DNUK", "name": "懒鲸酿造(新街口店)", "address": "南台巷东2-2号(民族大厦西南门旁)", "location": "118.780716,32.036685"}}, {"name": "TEMPLE DRINK", "sourceOrder": 24, "address": "夫子庙大石坝街59-1", "point": [118.790627, 32.019471], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "TEMPLE DRINK", "matchedAddress": "夫子庙大石坝街59-1", "poiId": "B0FFMGR2FT", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-01:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0FFMGR2FT", "name": "TEMPLE DRINK", "address": "夫子庙大石坝街59-1", "location": "118.790627,32.019471"}}, {"name": "魂浊·精酿宝藏小馆(汉口路店)", "sourceOrder": 25, "address": "汉口路40号1-2号", "point": [118.778529, 32.053968], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "魂浊·精酿宝藏小馆(汉口路店)", "matchedAddress": "汉口路40号1-2号", "poiId": "B0I27GGA2C", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间： 10:30-24:00 ", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0I27GGA2C", "name": "魂浊·精酿宝藏小馆(汉口路店)", "address": "汉口路40号1-2号", "location": "118.778529,32.053968"}}, {"name": "度·世界精酿啤酒博物馆(河西澎湃力中心店)", "sourceOrder": 26, "address": "江东中路300号澎湃力中心", "point": [118.713712, 31.988298], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "度·世界精酿啤酒博物馆(河西旗舰店)", "matchedAddress": "双闸街道江东中路300号澎湃力中心1F-106区", "poiId": "B0I2K7J15Z", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 17:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0I2K7J15Z", "name": "度·世界精酿啤酒博物馆(河西旗舰店)", "address": "双闸街道江东中路300号澎湃力中心1F-106区", "location": "118.713712,31.988298"}}, {"name": "ACE homebar(建邺万达店)", "sourceOrder": 27, "address": "建邺万达F座3201", "point": [118.737068, 32.030566], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "ACE HomeBar(建邺万达店)", "matchedAddress": "兴隆街道福园街131号万达广场万达中心F座3201室", "poiId": "B0K1DMCGAV", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 20:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0K1DMCGAV", "name": "ACE HomeBar(建邺万达店)", "address": "兴隆街道福园街131号万达广场万达中心F座3201室", "location": "118.737068,32.030566"}}, {"name": "Joker Bar & Cafe 小丑吧 & 咖啡", "sourceOrder": 28, "address": "太平北路136-14号商铺", "point": [118.798274, 32.057274], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-23:00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "高德名称小丑Joker Hookah bar，太平北路136-14号与小程序地址相符。", "matchedName": "小丑Joker Hookah bar", "matchedAddress": "梅园新村街道太平北路136号-14", "coordinateEvidence": {"type": "place/text", "id": "B0LGF7RSHP", "name": "小丑Joker Hookah bar", "address": "梅园新村街道太平北路136号-14", "location": "118.798274,32.057274"}, "poiId": "B0LGF7RSHP"}, {"name": "LBZ量不准的早C晚A(三元巷店)", "sourceOrder": 29, "address": "三元巷4-4", "point": [118.783375, 32.035101], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "LBZ量不准的早C晚A(三元巷店)", "matchedAddress": "三元巷4-4号(桔子水晶酒店停车场正对面)", "poiId": "B0I24RRXMD", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-01:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0I24RRXMD", "name": "LBZ量不准的早C晚A(三元巷店)", "address": "三元巷4-4号(桔子水晶酒店停车场正对面)", "location": "118.783375,32.035101"}}, {"name": "Morpho COFFEE & BAR", "sourceOrder": 30, "address": "石头城路99号南艺后街", "point": [118.749997, 32.063862], "matchLevel": "门牌号附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "", "matchedAddress": "江苏省南京市鼓楼区石头城路99号", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一,周三,周四,周日 18:00-24:00 周五,周六 18:00-02:00（周二店休）", "coordinateNote": "按小程序石头城路99号匹配，不沿用高德同名店石头城路95号。", "coordinateEvidence": {"type": "geocode/geo", "level": "门址", "address": "江苏省南京市鼓楼区石头城路99号", "location": "118.749997,32.063862"}}, {"name": "Fam如梦·之梦HOMEBAR", "sourceOrder": 31, "address": "七贤街一号5栋润铂公寓2904室", "point": [118.733875, 31.963225], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "Fam如梦·之梦HOMEBAR", "matchedAddress": "七贤街一号5栋润铂公寓2904室", "poiId": "B0LA199WYX", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 20:30-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0LA199WYX", "name": "Fam如梦·之梦HOMEBAR", "address": "七贤街一号5栋润铂公寓2904室", "location": "118.733875,31.963225"}}, {"name": "107 Mooking", "sourceOrder": 32, "address": "江宁区乐动力数字体育中心西区", "point": [118.89471, 31.912562], "matchLevel": "同名门店及园区相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "107Mooking", "matchedAddress": "格致路1号", "poiId": "B0MDNOG3XQ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周五 11:00-23:00 周末11:00-24:00", "coordinateNote": "高德店址为格致路1号，另查询确认该址是乐动力江宁数字体育中心；小程序写明西区。", "coordinateEvidence": {"type": "place/text", "id": "B0MDNOG3XQ", "name": "107Mooking", "address": "格致路1号", "location": "118.89471,31.912562"}, "landmarkEvidence": {"name": "乐动力江宁数字体育中心", "address": "格致路1号江宁大学城内(近南京工程学院)江宁体育中心内"}}, {"name": "PUNCH打酒", "sourceOrder": 33, "address": "石鼓路56号", "point": [118.781985, 32.039234], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "Punch打酒", "matchedAddress": "石鼓路56号(新街口地铁站15号口步行250米)", "poiId": "B0J2VLLV2E", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 18:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0J2VLLV2E", "name": "Punch打酒", "address": "石鼓路56号(新街口地铁站15号口步行250米)", "location": "118.781985,32.039234"}}, {"name": "满杯Full Cup酒馆", "sourceOrder": 34, "address": "河西万达G座2819", "point": [118.737275, 32.029725], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "满杯Full Cup", "matchedAddress": "万达中心G座2819室", "poiId": "B0MGVLGBIB", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MGVLGBIB", "name": "满杯Full Cup", "address": "万达中心G座2819室", "location": "118.737275,32.029725"}}, {"name": "鱼跃社·旷野homebar", "sourceOrder": 35, "address": "九霄梦天地A座1809", "point": [118.916983, 32.092428], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "鱼跃社·旷野homebar", "matchedAddress": "学衡路1号九霄梦天地A座F18层", "poiId": "B0LG1H4RQ3", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0LG1H4RQ3", "name": "鱼跃社·旷野homebar", "address": "学衡路1号九霄梦天地A座F18层", "location": "118.916983,32.092428"}}, {"name": "囧吉香生蚝牛排Bistro(百家湖店)", "sourceOrder": 36, "address": "湖滨路湖滨公寓2A栋一层102号", "point": [118.815351, 31.942497], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "囧吉香生蚝牛排Bistro", "matchedAddress": "湖滨路2A栋102", "poiId": "B0H2TZNP5B", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 17:00-01:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0H2TZNP5B", "name": "囧吉香生蚝牛排Bistro", "address": "湖滨路2A栋102", "location": "118.815351,31.942497"}}, {"name": "大白歪八db winebar(老门东1865店)", "sourceOrder": 37, "address": "中华门街道养虎巷18号1865产业园E3幢", "point": [118.791848, 32.006735], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "大白歪八db winebar(老门东1865店)", "matchedAddress": "养虎巷18号晨光1865创意产业园E3栋", "poiId": "B0L1FL146O", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周二至周日 18:00-24:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0L1FL146O", "name": "大白歪八db winebar(老门东1865店)", "address": "养虎巷18号晨光1865创意产业园E3栋", "location": "118.791848,32.006735"}}, {"name": "炁·国潮酒馆(大行宫店)", "sourceOrder": 38, "address": "五老村街道新世纪广场B座1005室", "point": [118.795014, 32.040012], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "炁国潮酒馆(大行宫总店)", "matchedAddress": "五老村街道中山东路370号新世纪广场B座1005室", "poiId": "B0L1CP5953", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0L1CP5953", "name": "炁国潮酒馆(大行宫总店)", "address": "五老村街道中山东路370号新世纪广场B座1005室", "location": "118.795014,32.040012"}}, {"name": "木洋酒馆·游戏小屋", "sourceOrder": 39, "address": "红花街道汇康路99号13栋10号店铺(霸王茶姬斜对面)", "point": [118.805836, 31.980456], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "木洋酒馆.游戏小屋", "matchedAddress": "宁深路东侧堂悦花园13幢10室", "poiId": "B0K2FSF5GQ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-01:30", "coordinateNote": "小程序汇康路99号13栋与高德堂悦花园13幢相符；另查同楼公寓确认汇康路99号为保利堂悦13幢。", "coordinateEvidence": {"type": "place/text", "id": "B0K2FSF5GQ", "name": "木洋酒馆.游戏小屋", "address": "宁深路东侧堂悦花园13幢10室", "location": "118.805836,31.980456"}}, {"name": "Bar Elf", "sourceOrder": 40, "address": "石鼓路98号", "point": [118.779752, 32.040179], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "BAR ELF", "matchedAddress": "石鼓路98号阳光大厦16层1602室", "poiId": "B0JD3Z1018", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0JD3Z1018", "name": "BAR ELF", "address": "石鼓路98号阳光大厦16层1602室", "location": "118.779752,32.040179"}}, {"name": "BLUEMOON·蓝月亮", "sourceOrder": 41, "address": "朝天宫街道汉中路139号五星年华大厦18楼1805（米居年华酒店18楼）", "point": [118.776801, 32.04164], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "BLUEMOON·蓝月亮", "matchedAddress": "朝天宫街道汉中路139号五星年华大厦18层1805", "poiId": "B0L0XSK559", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0L0XSK559", "name": "BLUEMOON·蓝月亮", "address": "朝天宫街道汉中路139号五星年华大厦18层1805", "location": "118.776801,32.04164"}}, {"name": "VoidBar•清玄•德州", "sourceOrder": 42, "address": "石鼓路98号阳光大厦西南门7层708室清玄BAR", "point": [118.779592, 32.040196], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "清玄酒吧", "matchedAddress": "朝天宫街道石鼓路98号阳光大厦708室", "poiId": "B0LK754DYU", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0LK754DYU", "name": "清玄酒吧", "address": "朝天宫街道石鼓路98号阳光大厦708室", "location": "118.779592,32.040196"}}, {"name": "Driftwood追福（小西湖店）", "sourceOrder": 43, "address": "小西湖29号103室", "point": [118.787249, 32.014687], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "浮木Driftwood(小西湖店)", "matchedAddress": "小西湖29号103室", "poiId": "B0LKLC9GPJ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 18:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0LKLC9GPJ", "name": "浮木Driftwood(小西湖店)", "address": "小西湖29号103室", "location": "118.787249,32.014687"}}, {"name": "魔女cafe·bar", "sourceOrder": 44, "address": "建康路2号茂业天地沿街店铺(达美乐和华为中间）", "point": [118.785891, 32.022651], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "魔女cafe·bar(茂业总店)", "matchedAddress": "建康路2号茂业天地沿街", "poiId": "B0MBPM0ZGS", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 12:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MBPM0ZGS", "name": "魔女cafe·bar(茂业总店)", "address": "建康路2号茂业天地沿街", "location": "118.785891,32.022651"}}, {"name": "日出•高空R&B鸡尾酒吧", "sourceOrder": 45, "address": "融汇时代中心18楼1812-2", "point": [118.820575, 31.926275], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "日出R&B高空酒吧", "matchedAddress": "融汇时代中心18楼1812-2", "poiId": "B0L3VAH6XL", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周二至周日 18:30-02:00（周一店休）", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0L3VAH6XL", "name": "日出R&B高空酒吧", "address": "融汇时代中心18楼1812-2", "location": "118.820575,31.926275"}}, {"name": "surprise惊喜", "sourceOrder": 46, "address": "太平北路136-11号", "point": [118.797993, 32.055841], "matchLevel": "门牌号匹配（非同名店）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周二到周五14:00-24:00 周六周日10:00-24:00（周一店休）", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "使用小程序太平北路136-11号的门牌坐标；高德收录名称为natural moment，不视为已确认酒馆名称。", "matchedName": "natural moment", "matchedAddress": "太平北路136-11号", "coordinateEvidence": {"type": "place/text", "id": "B0L199HC0L", "name": "natural moment", "address": "太平北路136-11号", "location": "118.797993,32.055841"}, "poiId": "B0L199HC0L"}, {"name": "The life", "sourceOrder": 47, "address": "马道街39号", "point": [118.787443, 32.014186], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "The life", "matchedAddress": "马道街与箍桶巷交叉口西80米", "poiId": "B0MUZL8LF5", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 15:00-02:00", "coordinateNote": "高德马道街与箍桶巷交叉口西80米位置，与马道街39号地理编码相距约5米。", "coordinateEvidence": {"type": "place/text", "id": "B0MUZL8LF5", "name": "The life", "address": "马道街与箍桶巷交叉口西80米", "location": "118.787443,32.014186"}}, {"name": "LBZ量不准的早C晚A(中央商场店)", "sourceOrder": 48, "address": "洪武路50号一楼A区24-25号(近新街口步行街)", "point": [118.787033, 32.038967], "matchLevel": "楼栋附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日8:00-02:00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "按小程序洪武路50号匹配，尚未核实一楼A区24-25号的实际入口。", "matchedName": "", "matchedAddress": "江苏省南京市秦淮区洪武路50号", "coordinateEvidence": {"type": "geocode/geo", "level": "门址", "address": "江苏省南京市秦淮区洪武路50号", "location": "118.787033,32.038967"}}, {"name": "南京KinK9圈子酒吧", "sourceOrder": 49, "address": "华侨路26号二楼", "point": [118.781823, 32.046452], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日20:00-02:00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "选择华侨路26号新街口店，不使用民和路18号同名分店。", "matchedName": "南京kink9圈子酒馆(新街口店)", "matchedAddress": "华侨路26号2层204", "coordinateEvidence": {"type": "place/text", "id": "B0H3G968LZ", "name": "南京kink9圈子酒馆(新街口店)", "address": "华侨路26号2层204", "location": "118.781823,32.046452"}, "poiId": "B0H3G968LZ"}, {"name": "DASH LAND 大师兰德鸡尾酒吧(洪武路店)", "sourceOrder": 50, "address": "洪武路115号-4号", "point": [118.788782, 32.038742], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "DASH LANDxSoul App(洪武路店)", "matchedAddress": "洪武路115号-4号", "poiId": "B0L0ZMDVVQ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日16:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0L0ZMDVVQ", "name": "DASH LANDxSoul App(洪武路店)", "address": "洪武路115号-4号", "location": "118.788782,32.038742"}}, {"name": "熊布布HooKahLounge", "sourceOrder": 51, "address": "南台巷东与南台巷交叉口西南60米", "point": [118.780225, 32.036725], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "熊布布Hookah Lounge", "matchedAddress": "南台巷东与南台巷交叉口西南60米", "poiId": "B0MU6RVMKX", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 14:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MU6RVMKX", "name": "熊布布Hookah Lounge", "address": "南台巷东与南台巷交叉口西南60米", "location": "118.780225,32.036725"}}, {"name": "Myna Bar", "sourceOrder": 52, "address": "石鼓路阳光大厦20层2003", "point": [118.77951, 32.040302], "matchLevel": "楼栋附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "", "matchedAddress": "江苏省南京市秦淮区石鼓路阳光大厦(西南门)20层", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 20:00-02:00", "coordinateNote": "按小程序石鼓路阳光大厦20层匹配；舍弃高德同名店王府大街29号位置。", "coordinateEvidence": {"type": "geocode/geo", "level": "门址", "address": "江苏省南京市秦淮区石鼓路阳光大厦(西南门)20层", "location": "118.779510,32.040302"}}, {"name": "壹汀E·TIng德州主题酒馆(新街口店)", "sourceOrder": 53, "address": "五老村街道洪武路38号正洪大厦1106室", "point": [118.786826, 32.039747], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "壹汀E·TIng Homebar(新街口店)", "matchedAddress": "五老村街道洪武路38号正洪大厦1106室", "poiId": "B0LRJLIX6T", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 20:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0LRJLIX6T", "name": "壹汀E·TIng Homebar(新街口店)", "address": "五老村街道洪武路38号正洪大厦1106室", "location": "118.786826,32.039747"}}, {"name": "酵母商店民谣酒吧", "sourceOrder": 54, "address": "评事街152号", "point": [118.780159, 32.027928], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "酵母商店民谣酒吧", "matchedAddress": "评事街152号", "poiId": "B0MU4CAZEZ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日19:00-1:30", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MU4CAZEZ", "name": "酵母商店民谣酒吧", "address": "评事街152号", "location": "118.780159,32.027928"}}, {"name": "AfterTheRain Coffee·餐·Bar(户部街店)", "sourceOrder": 55, "address": "户部街24号-6(常府街地铁站4号口步行310米)", "point": [118.791645, 32.035043], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "AfterTheRainCoffee", "matchedAddress": "户部街24号-6(常府街地铁站4号口步行310米)", "poiId": "B0MUZC7XZB", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：参考营业时间：10：00-24：00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0MUZC7XZB", "name": "AfterTheRainCoffee", "address": "户部街24号-6(常府街地铁站4号口步行310米)", "location": "118.791645,32.035043"}}, {"name": "So Hookah Lounge", "sourceOrder": 56, "address": "王府大街57-1 SO LOUNGE", "point": [118.779232, 32.037943], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周二至周日 19：00-2：00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "高德名为SOLOUNGE，王府大街57-1与小程序SO LOUNGE一致。", "matchedName": "SOLOUNGE", "matchedAddress": "王府大街57-1 SO LOUNGE", "coordinateEvidence": {"type": "place/text", "id": "B0MRDU9EKT", "name": "SOLOUNGE", "address": "王府大街57-1 SO LOUNGE", "location": "118.779232,32.037943"}, "poiId": "B0MRDU9EKT"}, {"name": "Vibes维布斯德州竞技酒吧", "sourceOrder": 57, "address": "新街口街道中山路286号羲和商业广场负一楼", "point": [118.785414, 32.054668], "matchLevel": "商业广场附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日 18.00-02.00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "使用小程序中山路286号羲和商业广场位置，尚未核实负一楼入口。", "matchedName": "", "matchedAddress": "江苏省南京市玄武区新街口街道街道中山路羲和商业广场", "coordinateEvidence": {"type": "geocode/geo", "level": "兴趣点", "address": "江苏省南京市玄武区新街口街道街道中山路羲和商业广场", "location": "118.785414,32.054668"}}, {"name": "No Title", "sourceOrder": 58, "address": "鼎新路1-4号", "point": [118.777355, 32.028002], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "NoTitle", "matchedAddress": "鼎新路1-4号", "poiId": "B0GRUM59XJ", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 19:00–02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0GRUM59XJ", "name": "NoTitle", "address": "鼎新路1-4号", "location": "118.777355,32.028002"}}, {"name": "魁River house河牌屋·Finale(南京店)", "sourceOrder": 59, "address": "洪武路街道建康路1号B1-S-10号", "point": [118.785874, 32.023772], "matchLevel": "商业体附近（约定位）", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "hours": "参考营业时间：周一至周日 18：00-02：00", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "coordinateNote": "使用小程序建康路1号水游城商业体位置，未核实B1-S-10号的实际入口。", "matchedName": "南京鹏欣·水游城", "matchedAddress": "建康路1号", "coordinateEvidence": {"type": "place/text", "id": "B001911L8Z", "name": "南京鹏欣·水游城", "address": "建康路1号", "location": "118.785874,32.023772"}, "poiId": "B001911L8Z"}, {"name": "LAND Pub(熙南里店)", "sourceOrder": 60, "address": "升州路216号(三山街地铁站2号口步行450米)", "point": [118.778387, 32.025433], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "Land pub", "matchedAddress": "升州路216号(三山街地铁站2号口步行450米)", "poiId": "B0KR3SXU75", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 18:30-2:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0KR3SXU75", "name": "Land pub", "address": "升州路216号(三山街地铁站2号口步行450米)", "location": "118.778387,32.025433"}}, {"name": "蛮兽烧烤·铁板烧", "sourceOrder": 61, "address": "升州路190号(三山街地铁站2号口步行410米)", "point": [118.77938, 32.02523], "matchLevel": "同名门店及分店地址相符", "source": "酒鬼巡游记小程序南京26五期适用门店", "sourceDate": "2026-11-26", "matchedName": "蛮兽烧烤·铁板烧(升州路)", "matchedAddress": "升州路190号(三山街地铁站2号口步行410米)", "poiId": "B0H2OZCL80", "coordinateSource": "高德地图 GCJ-02", "coordinateCheckedAt": "2026-11-26", "hours": "参考营业时间：周一至周日 17:00-02:00", "coordinateNote": "已对照小程序地址的道路门牌号或楼栋名称；坐标不代表已核实实际入口。", "coordinateEvidence": {"type": "place/text", "id": "B0H2OZCL80", "name": "蛮兽烧烤·铁板烧(升州路)", "address": "升州路190号(三山街地铁站2号口步行410米)", "location": "118.77938,32.02523"}}];
+
+const $=id=>document.getElementById(id);
+let origin=null,lastAccuracy=null;
+
+function distance(a,b){const r=Math.PI/180,x=(b[1]-a[1])*r,y=(b[0]-a[0])*r;return 6371*2*Math.asin(Math.min(1,Math.sqrt(Math.sin(x/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(y/2)**2)))}
+const visitKey='nj-bar-visits-v1',sessionKey='nj-bar-session-v1';
+let session=null,events=[],reviews={},profile={nickname:'酒鬼朋友',avatar:'🍸'},cloudReady=false,activeReviewId=null;
+let visits={};try{visits=JSON.parse(localStorage.getItem(visitKey)||'{}')||{}}catch{}
+const barId=b=>b.name+'|'+b.address;
+function today(){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const x=Object.fromEntries(parts.map(p=>[p.type,p.value]));const date=new Date(Date.UTC(+x.year,+x.month-1,+x.day));if(+x.hour<10)date.setUTCDate(date.getUTCDate()-1);return date.toISOString().slice(0,10)}
+function syncMessage(s){$('syncStatus').textContent=s}
+const recordKey='nj-bar-records-v1';
+let localDB={visit_events:[],bar_reviews:[],profiles:[]};
+try{const saved=JSON.parse(localStorage.getItem(recordKey)||'null');if(saved&&Array.isArray(saved.visit_events)&&Array.isArray(saved.bar_reviews)&&Array.isArray(saved.profiles))localDB=saved}catch{}
+async function supabaseRequest(path,options={}){
+  const url=new URL(path,'https://local.invalid'),table=url.pathname.split('/').pop();
+  if(!Object.hasOwn(localDB,table))throw Error('未知记录类型');
+  const filters=[...url.searchParams].filter(([k,v])=>v.startsWith('eq.'));
+  const matches=row=>filters.every(([k,v])=>String(row[k])===v.slice(3));
+  const method=options.method||'GET';
+  if(method==='GET')return localDB[table].filter(matches).map(row=>({...row}));
+  const next=JSON.parse(JSON.stringify(localDB));
+  if(method==='DELETE')next[table]=next[table].filter(row=>!matches(row));
+  else if(method==='POST'){
+    const row=JSON.parse(options.body||'{}');
+    const keys=(url.searchParams.get('on_conflict')||'').split(',').filter(Boolean);
+    const previous=keys.length?next[table].findIndex(item=>keys.every(k=>item[k]===row[k])):-1;
+    if(previous>=0)next[table][previous]={...next[table][previous],...row};
+    else next[table].unshift({id:globalThis.crypto?.randomUUID?.()||String(Date.now())+Math.random(),created_at:new Date().toISOString(),...row});
+  }else throw Error('不支持此操作');
+  localStorage.setItem(recordKey,JSON.stringify(next));localDB=next;return null;
+}
+async function ensureSession(){session={user:{id:'local-nanjing'}}}
+function rebuildVisits(){visits={};for(const e of events){const v=visits[e.bar_id]||{count:0,last:null};v.count+=e.visit_count;if(e.visit_day&&(!v.last||e.visit_day>v.last))v.last=e.visit_day;visits[e.bar_id]=v}try{localStorage.setItem(visitKey,JSON.stringify(visits))}catch{}}
+async function loadVisits(){try{await ensureSession();const [ev,rv,pf]=await Promise.all([supabaseRequest('/rest/v1/visit_events?select=id,bar_id,visit_day,visit_count,created_at&order=created_at.desc'),supabaseRequest('/rest/v1/bar_reviews?select=bar_id,rating,note'),supabaseRequest('/rest/v1/profiles?select=nickname,avatar')]);events=ev;reviews=Object.fromEntries(rv.map(r=>[r.bar_id,r]));if(pf[0])profile=pf[0];cloudReady=true;rebuildVisits();syncMessage('个人记录保存在当前浏览器，清除浏览器数据会删除记录。');show();renderProfile()}catch(e){syncMessage('本机存储暂不可用：'+e.message)}}
+async function refreshEvents(){events=await supabaseRequest('/rest/v1/visit_events?select=id,bar_id,visit_day,visit_count,created_at&order=created_at.desc');rebuildVisits();show();renderProfile()}
+async function markVisit(b){if(!cloudReady){syncMessage('本机存储暂不可用，请允许浏览器存储后重试。');return}const id=barId(b),existing=events.find(e=>e.bar_id===id&&e.visit_day===today());try{if(existing)await supabaseRequest('/rest/v1/visit_events?id=eq.'+existing.id,{method:'DELETE'});else await supabaseRequest('/rest/v1/visit_events',{method:'POST',body:JSON.stringify({user_id:session.user.id,bar_id:id,visit_day:today(),visit_count:1})});await refreshEvents();syncMessage(existing?'已撤销今日打卡。':'今日打卡已保存。')}catch(e){syncMessage('保存失败：'+e.message)}}
+function kindMatch(b,k){const n=b.name.toLowerCase();return k==='all'||({cocktail:/鸡尾酒|cocktail|威士忌|whisk/,beer:/精酿|啤酒|taproom|pub|pints|brew/,home:/homebar|home bar|社交|家庭式/,game:/桌游|飞镖|运动|game|轮滑/}[k]||/^$/).test(n)}
+function nearest(rows,p){return rows.filter(b=>Array.isArray(b.point)&&b.point.length===2&&b.point.every(Number.isFinite)).filter(b=>kindMatch(b,$('kind').value)).filter(b=>!$('hideToday').checked||!events.some(e=>e.bar_id===barId(b)&&e.visit_day===today())).filter(b=>!$('hideHistory').checked||!visits[barId(b)]?.count).map(b=>({...b,km:distance(p,b.point)})).sort((a,b)=>a.km-b.km).slice(0,5)}
+function barById(id){return window.BARS.find(b=>barId(b)===id)}
+function profileItem(e,withUndo){const bar=barById(e.bar_id),row=document.createElement('div');row.className='profile-item';const info=document.createElement('div'),name=document.createElement('strong');name.textContent=bar?.name||e.bar_id.split('|')[0];const meta=document.createElement('small');meta.textContent=(e.visit_day||'日期未知')+(e.visit_count>1?' · '+e.visit_count+' 次':'');info.append(name,meta);row.append(info);if(withUndo){const undo=document.createElement('button');undo.className='secondary';undo.textContent='撤销';undo.onclick=()=>bar&&markVisit(bar);row.append(undo)}return row}
+function renderProfile(){if(!$('profileName'))return;$('profileName').textContent=profile.nickname||'酒鬼朋友';$('profileAvatar').textContent=profile.avatar||'🍸';const visited=Object.values(visits).filter(v=>v.count>0);$('profileCount').textContent='去过 '+visited.length+' 家 · 打卡 '+visited.reduce((n,v)=>n+v.count,0)+' 次';const t=events.filter(e=>e.visit_day===today());$('todayList').replaceChildren(...t.map(e=>profileItem(e,true)));if(!t.length)$('todayList').textContent='今天还没有打卡。';$('clearToday').disabled=!t.length;const q=$('historySearch').value.trim().toLowerCase();const list=events.filter(e=>(barById(e.bar_id)?.name||e.bar_id).toLowerCase().includes(q));$('historyList').replaceChildren(...list.map(e=>profileItem(e,false)));if(!list.length)$('historyList').textContent='没有匹配的历史记录。'}
+$('historySearch').addEventListener('input',renderProfile);
+$('clearToday').onclick=async()=>{const n=events.filter(e=>e.visit_day===today()).length;if(!n||!confirm('将今日 '+n+' 家恢复为未去？以前的历史记录不受影响。'))return;try{await supabaseRequest('/rest/v1/visit_events?visit_day=eq.'+today(),{method:'DELETE'});await refreshEvents()}catch(e){alert('操作失败：'+e.message)}};
+$('editProfile').onclick=()=>{$('nickname').value=profile.nickname||'';$('avatarChoice').value=profile.avatar||'🍸';$('profileDialog').showModal()};$('cancelProfile').onclick=()=>$('profileDialog').close();
+$('profileForm').onsubmit=async e=>{e.preventDefault();const next={user_id:session?.user?.id,nickname:$('nickname').value.trim(),avatar:$('avatarChoice').value};if(!next.user_id||!next.nickname)return;try{await supabaseRequest('/rest/v1/profiles?on_conflict=user_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates'},body:JSON.stringify(next)});profile=next;renderProfile();$('profileDialog').close()}catch(err){alert('保存失败：'+err.message)}};
+function openReview(b){activeReviewId=barId(b);const r=reviews[activeReviewId];$('reviewTitle').textContent=b.name+' · 我的评价';$('reviewRating').value=r?.rating||'';$('reviewText').value=r?.note||'';$('deleteReview').hidden=!r;$('reviewDialog').showModal()}
+$('cancelReview').onclick=()=>$('reviewDialog').close();$('reviewForm').onsubmit=async e=>{e.preventDefault();if(!session){alert('请稍等，正在读取本机记录。');return}const rating=$('reviewRating').value,note=$('reviewText').value.trim();if(!rating&&!note){alert('请填写评分或短评。');return}try{await supabaseRequest('/rest/v1/bar_reviews?on_conflict=user_id,bar_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates'},body:JSON.stringify({user_id:session.user.id,bar_id:activeReviewId,rating:rating?+rating:null,note})});reviews[activeReviewId]={rating:rating?+rating:null,note};$('reviewDialog').close();show()}catch(err){alert('保存失败：'+err.message)}};
+$('deleteReview').onclick=async()=>{try{await supabaseRequest('/rest/v1/bar_reviews?bar_id=eq.'+encodeURIComponent(activeReviewId),{method:'DELETE'});delete reviews[activeReviewId];$('reviewDialog').close();show()}catch(err){alert('删除失败：'+err.message)}};
+let walkRun=0;const walkCache=new Map();
+async function walkTimes(bars, from, run) {
+  const start = [...from];
+  // Sequential requests also avoid exceeding the shared key's QPS limit.
+  for (let index = 0; index < bars.length; index++) {
+    if (run !== walkRun) return;
+    const bar = bars[index];
+    const key = start.join(',') + '|' + bar.point.join(',');
+    const cached = walkCache.get(key);
+    let estimate = cached && Date.now() - cached.checkedAt < 300000 ? cached : null;
+    if (!estimate) {
+      try {
+        const data = await amapRequest('/v3/direction/walking', {
+          origin: start.join(','),
+          destination: bar.point.join(',')
+        });
+        const path = data.route?.paths?.[0];
+        const seconds = Number(path?.duration);
+        const metres = Number(path?.distance);
+        if (Number.isFinite(seconds) && seconds > 0) {
+          estimate = {minutes: Math.ceil(seconds / 60), metres, checkedAt: Date.now()};
+          walkCache.set(key, estimate);
+        }
+      } catch {
+        // Failed requests remain retryable on the next refresh.
+      }
+      if (index < bars.length - 1) await new Promise(resolve => setTimeout(resolve, 400));
+    }
+    if (run !== walkRun) return;
+    const element = document.getElementById('walk-' + index);
+    if (!element) continue;
+    element.firstChild.textContent = estimate
+      ? '步行预估 ' + estimate.minutes + ' 分钟' + (estimate.metres > 0 ? '（' + (estimate.metres / 1000).toFixed(2) + '公里）' : '') + ' · 直线距离 '
+      : '步行时间暂不可用 · 直线距离 ';
+    element.title = '按本页出发点和门店坐标计算。楼栋入口、定位精度及高德客户端重新规划可能影响结果。';
+  }
+}
+
+function message(s){$('status').textContent=s}
+
+// Keyed by barId(bar). Populate only from a verified branch and event edition.
+const verifiedBarDetails = {};
+const amapRatings = {};
+function appendBarDetails(card, bar){
+  const details = verifiedBarDetails[barId(bar)];
+  const rating = document.createElement('p');
+  rating.textContent = details?.dianpingRating == null
+    ? '大众点评评分：待核实'
+    : '大众点评评分：'+details.dianpingRating+'/5'+(details.dianpingCheckedAt?' · '+details.dianpingCheckedAt:'');
+  const link=document.createElement('a');
+  const shopName=bar.name+' '+bar.address;
+  link.href=details?.dianpingUrl
+    || 'https://www.dianping.com/search/keyword/5/0_'+encodeURIComponent(shopName);
+  link.textContent=details?.dianpingUrl?'打开分店':'去大众点评查评分';
+  link.target='_blank';
+  link.rel='noopener noreferrer';
+  if(details?.dianpingRating == null) rating.replaceChildren(link);
+  else rating.append(' · ',link);
+  const drinks=document.createElement('p');
+  drinks.textContent='本期可兑酒款：'+(details?.eventDrinks?.length
+    ? details.eventDrinks.map(drink=>drink.type?drink.name+'（'+drink.type+'）':drink.name).join('、')
+    : '待核实');
+  const amap = amapRatings[barId(bar)];
+  if(amap){
+    const score = document.createElement('p');
+    score.textContent = '高德评分 '+amap.rating+'/5 · 2026-11-18 查询';
+    score.title = amap.name+' · '+amap.address;
+    card.append(score);
+  }
+  card.append(rating,drinks);
+}
+function show(){
+  if(!origin)return;
+  const selected=nearest(window.BARS,origin),mapped=window.BARS.filter(b=>b.point).length;
+  $('list').replaceChildren();
+  $('resultTitle').textContent='附近酒馆 · '+selected.length+' 家';
+  $('coverage').textContent='已有坐标 '+mapped+' / '+window.BARS.length+' 家'+(mapped<window.BARS.length?' · 未匹配门店不参与排名，当前结果可能不完整':'');
+  $('coverage').textContent+=' · 部分为楼栋或商业体附近，详情见门店卡片';
+  const run=++walkRun; selected.forEach((b,i)=>{
+    const card=document.createElement('article');
+    card.className='card';
+    const h=document.createElement('h3');h.textContent=b.name;
+    const d=document.createElement('strong');d.className='distance';d.id='walk-'+i;d.textContent='步行路线查询中 · 直线距离 ';const dist=document.createElement('span');dist.textContent=b.km<1?Math.round(b.km*1000)+' 米':b.km.toFixed(2)+' 公里';d.append(dist);
+    const addr=document.createElement('p');addr.textContent=b.address;const hours=document.createElement('p');hours.className='quiet';hours.textContent=b.hours+' · 小程序参考信息';
+    const link=document.createElement('a');
+    link.className='maplink';link.textContent='按此起终点步行 →';
+    const navigation = new URLSearchParams({
+      from: origin.join(',') + ',本页出发点',
+      to: b.point.join(',') + ',' + b.name,
+      mode: 'walk',
+      coordinate: 'gaode',
+      callnative: '1'
+    });
+    link.href = 'https://uri.amap.com/navigation?' + navigation.toString();
+    link.rel='noopener';
+    const info=document.createElement('small');info.textContent='坐标：'+b.matchLevel+'。'+b.coordinateNote;
+    const actions=document.createElement('div');actions.className='actions';actions.append(link);const reviewButton=document.createElement('button');reviewButton.type='button';reviewButton.className='secondary';reviewButton.textContent=reviews[barId(b)]?'编辑评价':'评价';reviewButton.onclick=()=>openReview(b);actions.append(reviewButton);if(reviews[barId(b)]){const badge=document.createElement('span');badge.className='review-badge';badge.textContent='已评价';card.append(badge)}
+    const visit=document.createElement('div');visit.className='visit-actions';const v=document.createElement('button');v.type='button';v.className='secondary'+(events.some(e=>e.bar_id===barId(b)&&e.visit_day===today())?' active':'');v.textContent=events.some(e=>e.bar_id===barId(b)&&e.visit_day===today())?'撤销今日已去':'标记今日已去';v.onclick=()=>markVisit(b);visit.append(v);if(visits[barId(b)]?.count){const note=document.createElement('small');note.textContent='历史去过 '+visits[barId(b)].count+' 次';visit.append(note)}card.append(h);appendBarDetails(card,b);card.append(d,addr,hours,info,actions,visit);
+    $('list').append(card)
+  });
+  $('placeholder').hidden=selected.length>0;
+  if(!selected.length)$('placeholder').textContent='当前没有符合筛选条件的酒馆。';
+  walkTimes(selected,origin,run);message('找到你了，按直线距离从近到远排好了。'+(lastAccuracy?' 定位精度约 '+Math.round(lastAccuracy)+' 米。':''));
+}
+
+setInterval(()=>{if(origin)show()},60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&origin)show()});
+function gcj(lng,lat){
+  if(lng<72.004||lng>137.8347||lat<.8293||lat>55.8271)return[lng,lat];
+  const pi=Math.PI,x=lng-105,y=lat-35;
+  let a=-100+2*x+3*y+.2*y*y+.1*x*y+.2*Math.sqrt(Math.abs(x)),b=300+x+2*y+.1*x*x+.1*x*y+.1*Math.sqrt(Math.abs(x));
+  a+=(20*Math.sin(6*x*pi)+20*Math.sin(2*x*pi))*2/3;
+  a+=(20*Math.sin(y*pi)+40*Math.sin(y/3*pi))*2/3;
+  a+=(160*Math.sin(y/12*pi)+320*Math.sin(y*pi/30))*2/3;
+  b+=(20*Math.sin(6*x*pi)+20*Math.sin(2*x*pi))*2/3;
+  b+=(20*Math.sin(x*pi)+40*Math.sin(x/3*pi))*2/3;
+  b+=(150*Math.sin(x/12*pi)+300*Math.sin(x/30*pi))*2/3;
+  const rad=lat/180*pi,m=1-.006693421622965943*Math.sin(rad)**2,sm=Math.sqrt(m);
+  return[lng+b*180/(6378245/sm*Math.cos(rad)*pi),lat+a*180/((6378245*(1-.006693421622965943))/(m*sm)*pi)]
+}
+
+function locate(){
+  const run=++positionRun;
+  if(!navigator.geolocation){failure('此浏览器不支持定位');return}
+  if(!window.isSecureContext){failure('自动定位需要 HTTPS 网页，请使用正式网页链接');return}
+  $('locate').disabled=true;
+  message('正在定位，请在系统提示中允许位置权限…');
+  navigator.geolocation.getCurrentPosition(p=>{
+    if(run!==positionRun)return;
+    $('locate').disabled=false;
+    origin=gcj(p.coords.longitude,p.coords.latitude);
+    lastAccuracy=p.coords.accuracy;
+    show();
+    if(p.coords.longitude<118.2||p.coords.longitude>119.3||p.coords.latitude<31.2||p.coords.latitude>32.7)
+      message('当前位置在南京范围外；仍显示离你最近的南京参与门店。')
+  },e=>{
+    if(run!==positionRun)return;
+    $('locate').disabled=false;
+    failure(e.code===1?'位置权限未开启':e.code===3?'定位超时':'暂时无法取得位置')
+  },{enableHighAccuracy:true,timeout:18000,maximumAge:30000})
+}
+
+function failure(s){
+  message(s+'。可点击“重新定位”，或输入地点名称查询。微信内无法定位时，可通过右上角菜单在系统浏览器打开。');
+  $('manual').open=true;
+  $('placeholder').textContent='定位没开？没关系，上面手动搜个地方也行。';
+}
+
+$('locate').onclick=locate;
+
+const AMAP_KEY='9b394c5966601993836cec621a3569bd';
+let positionRun=0,searchRun=0,searchBusy=false,lastSearchAt=0;
+const searchCache=new Map();
+
+const results=document.createElement('div');
+results.id='placeResults';
+results.setAttribute('aria-live','polite');
+$('origin').closest('.row').after(results);
+
+function choosePlace(place){
+  positionRun++;
+  $('locate').disabled=false;
+  origin=place.point;
+  lastAccuracy=null;
+  $('origin').value=place.name;
+  results.replaceChildren();
+  show();
+  message('以「'+place.name+'」为出发点，已按直线距离排序。');
+}
+
+function localPlaces(q){
+  return window.BARS.filter(b=>Array.isArray(b.point)).filter(b=>(b.name+' '+b.address).toLowerCase().includes(q.toLowerCase()))
+    .slice(0,5)
+    .map(b=>({name:b.name,address:b.address,point:b.point,source:'参与酒馆'}))
+}
+
+function validPoint(value){
+  if(typeof value!=='string')return null;
+  const p=value.split(',').map(Number);
+  return p.length===2&&p.every(Number.isFinite)&&p[0]>=118.2&&p[0]<=119.3&&p[1]>=31.2&&p[1]<=32.7?p:null
+}
+
+function amapPlaces(rows,kind){
+  const places=[];
+  for(const row of rows||[]){
+    const point=validPoint(row.location);
+    if(!point||!row.name)continue;
+    if(places.some(p=>p.name===row.name&&distance(p.point,point)<.08))continue;
+    const address=[row.district||row.adname,row.address].filter(x=>typeof x==='string'&&x).join(' · ');
+    places.push({name:row.name,address,point,source:kind})
+  }
+  return places.slice(0,10)
+}
+
+function showPlaces(list){
+  results.replaceChildren();
+  for(const p of list){
+    const button=document.createElement('button');
+    button.type='button';button.className='place-option';
+    const name=document.createElement('strong');name.textContent=p.name;
+    const address=document.createElement('span');address.textContent=(p.address||'南京')+' · '+p.source;
+    button.append(name,address);
+    button.onclick=()=>choosePlace(p);
+    results.append(button)
+  }
+}
+
+function amapRequest(path,params){
+  return new Promise((resolve,reject)=>{
+    const callback='amap_cb_'+Math.random().toString(36).slice(2),script=document.createElement('script');
+    let timer;
+    const cleanup=()=>{clearTimeout(timer);script.remove();delete window[callback]};
+    window[callback]=data=>{cleanup();if(data.status==='1')resolve(data);else reject(Error('高德接口返回：'+(data.info||'未知错误')+'。请检查 Key 权限或调用额度。'))};
+    script.onerror=()=>{cleanup();reject(Error('无法连接高德，请检查网络后重试。'))};
+    timer=setTimeout(()=>{cleanup();reject(Error('高德搜索超时，请重试。'))},12000);
+    script.src='https://restapi.amap.com'+path+'?'+new URLSearchParams({...params,key:AMAP_KEY,output:'JSON',callback});
+    document.head.append(script)
+  })
+}
+
+async function searchPlaces(){
+  const q=$('origin').value.trim();
+  if(q.length<2){message('请输入至少2个字，例如：新街口、南京大学、百家湖');$('origin').focus();return}
+  if(searchBusy)return;
+  const run=++searchRun;
+  const local=localPlaces(q);
+  showPlaces(local);
+  if(searchCache.has(q)){showPlaces([...local,...searchCache.get(q)]);message('请选择下面的匹配地点。');return}
+  if(Date.now()-lastSearchAt<1000){message('请稍等一秒再搜索');return}
+  searchBusy=true;lastSearchAt=Date.now();$('go').disabled=true;
+  message('正在使用高德搜索南京地点…');
+  try{
+    const params={keywords:q,city:'320100',citylimit:'true'};
+    const tips=await amapRequest('/v3/assistant/inputtips',{...params,datatype:'poi'});
+    let online=amapPlaces(tips.tips,'高德地点');
+    if(!online.length){
+      const poi=await amapRequest('/v3/place/text',{...params,offset:'10',page:'1',extensions:'base'});
+      online=amapPlaces(poi.pois,'高德地点')
+    }
+    if(run!==searchRun)return;
+    searchCache.set(q,online);
+    const combined=[...local,...online.filter(p=>!local.some(l=>l.name===p.name&&distance(l.point,p.point)<.1))];
+    showPlaces(combined);
+    message(combined.length?'请选择下面的正确地点，即可显示最近5家。':'没有找到匹配地点，请试试完整名称、道路门牌号或附近地铁站。')
+  }catch(e){
+    if(run!==searchRun)return;
+    message(e.message+(local.length?' 也可以选择下方已收录的酒馆。':''))
+  }finally{
+    searchBusy=false;$('go').disabled=false
+  }
+}
+
+$('go').onclick=searchPlaces;for(const id of ['kind','hideToday','hideHistory'])$(id).addEventListener('change',show);
+$('origin').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchPlaces()}});
+$('origin').addEventListener('input',()=>{searchRun++;results.replaceChildren()});
+
+function renderCatalog(){
+  const q=$('catalogSearch').value.trim().toLowerCase();
+  const bars=window.BARS.filter(b=>(b.name+' '+b.address).toLowerCase().includes(q));
+  $('catalogCount').textContent='显示 '+bars.length+' / '+window.BARS.length+' 家 · 名单顺序';
+  $('catalogList').replaceChildren();
+  for(const b of bars){
+    const card=document.createElement('article');card.className='card';
+    const h=document.createElement('h3');h.textContent=b.sourceOrder+'. '+b.name;
+    const addr=document.createElement('p');addr.textContent=b.address;const hours=document.createElement('p');hours.className='quiet';hours.textContent=b.hours+' · 小程序参考信息';
+    const info=document.createElement('small');info.textContent='坐标：'+b.matchLevel+'。'+b.coordinateNote;
+    card.append(h,addr,hours,info);
+    if(b.point){const button=document.createElement('button');button.type='button';button.className='secondary';button.textContent='以这里为出发点';button.onclick=()=>{positionRun++;origin=[...b.point];lastAccuracy=null;$('origin').value=b.name;$('locate').disabled=false;switchView('home');show()};card.append(button)}
+    $('catalogList').append(card);
+  }
+  if(!bars.length)$('catalogList').textContent='没有匹配门店，请换个关键词。';
+}
+$('catalogSearch').addEventListener('input',renderCatalog);
+renderCatalog();
+
+locate();
+loadVisits();
+</script>
+</body>
+</html>
